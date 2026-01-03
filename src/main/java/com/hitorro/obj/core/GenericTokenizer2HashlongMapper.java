@@ -50,7 +50,12 @@ public class GenericTokenizer2HashlongMapper extends BaseMapper<String, Long> {
     public Long apply(final String string) {
         reader.set(string);
         TokenStream ts = analyzer.tokenStream("body", reader);
-        CharTermAttribute termAttLocal = ts.addAttribute(CharTermAttribute.class);
+		try {
+			ts.reset();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		CharTermAttribute termAttLocal = ts.addAttribute(CharTermAttribute.class);
         long last = 0;
 
         try {
