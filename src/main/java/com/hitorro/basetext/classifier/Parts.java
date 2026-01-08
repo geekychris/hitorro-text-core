@@ -21,11 +21,7 @@
  */
 package com.hitorro.basetext.classifier;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public class Parts implements Comparable<Parts> {
     public double m_accum;
     public String m_cat;

@@ -26,10 +26,7 @@ import com.hitorro.basetext.inverter.TermTupleSetVisitor;
 import com.hitorro.util.core.map.HashToIdAllocatingMap;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- * <p/>
+
  * Called from by the visitAllElements method of all the Tuple Sets to apply a term space containing all terms in the
  * space of all ttsets.
  */

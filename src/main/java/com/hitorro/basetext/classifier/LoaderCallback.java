@@ -23,11 +23,7 @@ package com.hitorro.basetext.classifier;
 
 import java.io.File;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public interface LoaderCallback {
     void document(File f, String[] category);
 }

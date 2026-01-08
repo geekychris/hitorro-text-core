@@ -25,11 +25,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.hitorro.util.core.HTAssert;
 import com.hitorro.util.core.opers.HTPredicate;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public class PhraseBetweenLogicalOperator implements HTPredicate<PhraseElement> {
     private int minFreq;
     private int maxFreq;

@@ -31,10 +31,7 @@ import java.io.IOException;
 import java.util.Iterator;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- * <p/>
+
  * Iterate over a series of result from lucene.
  */
 public class LuceneResultIterator<E> implements Iterator<E> {

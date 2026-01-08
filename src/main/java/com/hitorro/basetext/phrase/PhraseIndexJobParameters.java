@@ -32,11 +32,7 @@ import com.hitorro.util.typesystem.annotation.ViewClassReference;
 
 import java.io.IOException;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 @TypeClassMetaInfo(shortTypeName = "PhraseIndexJobParameters",
         isView = false,
         isPersisted = true,

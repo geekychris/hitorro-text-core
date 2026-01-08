@@ -23,11 +23,7 @@ package com.hitorro.obj.core;
 
 import com.hitorro.util.log.Logger;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public class Log extends com.hitorro.util.core.Log {
     public static final Logger phraseextractor = Logger.getLogger("ht.phraseextractor");
     public static final Logger phraseindexer = Logger.getLogger("ht.phraseextractor");

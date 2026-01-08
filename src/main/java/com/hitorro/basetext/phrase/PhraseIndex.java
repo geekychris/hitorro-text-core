@@ -39,11 +39,7 @@ import java.io.*;
 import java.util.Date;
 import java.util.Iterator;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public class PhraseIndex extends BaseDFIndex {
     public static final String DictTextFile = "phrases.dicttext";
     public static final String DictFile = "phrases.dict";

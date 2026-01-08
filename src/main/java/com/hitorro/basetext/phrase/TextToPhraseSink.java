@@ -39,11 +39,7 @@ import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 
 import java.io.IOException;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public class TextToPhraseSink implements Sink<String> {
     public static final StringProperty AnalyzersKey = new StringProperty("analyzers", "analyzers for tokenization", "NUMBER, PORTER, LOWERCASE");
 

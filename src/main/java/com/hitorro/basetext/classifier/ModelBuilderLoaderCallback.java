@@ -36,11 +36,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public class ModelBuilderLoaderCallback implements LoaderCallback {
     private static final String Extensions[] = {"txt", "html", "htm"};
     private static final HashSet m_extensionMap = MapUtil.makeHashSet(Extensions);

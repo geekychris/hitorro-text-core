@@ -25,9 +25,7 @@ import com.hitorro.basetext.dfindex.BaseDFIndexInterface;
 import com.hitorro.util.core.hash.FPHash64;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
+
  * <p>
  * This guy and PhraseFilter needs to be re-written.  Given "the quick brown fox jumped over the lazy dogs" we get:
  * <p>

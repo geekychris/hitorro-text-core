@@ -31,11 +31,7 @@ import org.w3c.dom.Document;
 
 import java.io.IOException;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public class InverterUtils {
     public static TermTupleSetGroup getMergedTupleSetFromPage(HTMLParser parser) throws IOException {
         return getMergedTupleSetFromPage(parser, "body", Iso639Table.english);

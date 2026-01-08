@@ -24,11 +24,7 @@ package com.hitorro.basetext.dfindex;
 
 import gnu.trove.map.hash.TLongIntHashMap;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public class BaseDFIndex implements BaseDFIndexInterface {
     protected TLongIntHashMap m_map = new TLongIntHashMap();
     protected int layer;

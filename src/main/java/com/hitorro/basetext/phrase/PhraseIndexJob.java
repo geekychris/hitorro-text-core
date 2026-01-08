@@ -29,11 +29,7 @@ import org.apache.log4j.Level;
 
 import java.io.IOException;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public class PhraseIndexJob extends Job {
     public static final String Name = "PhraseIndexJob";
 

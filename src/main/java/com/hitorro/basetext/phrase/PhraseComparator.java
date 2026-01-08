@@ -23,11 +23,7 @@ package com.hitorro.basetext.phrase;
 
 import java.util.Comparator;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public class PhraseComparator implements Comparator<PhraseElement> {
     public static final PhraseComparator pc = new PhraseComparator();
 

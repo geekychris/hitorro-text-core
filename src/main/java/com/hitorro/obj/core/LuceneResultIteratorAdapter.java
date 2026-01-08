@@ -23,11 +23,7 @@ package com.hitorro.obj.core;
 
 import org.apache.lucene.document.Document;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public interface LuceneResultIteratorAdapter<E> {
     E map(float score, Document doc);
 }

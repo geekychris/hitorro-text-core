@@ -37,11 +37,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public class ClassifierDoc {
     public static final String CategoryJoinToken = ":";
     private File m_file;

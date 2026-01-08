@@ -25,11 +25,7 @@ import com.hitorro.util.core.Console;
 
 import java.io.IOException;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public class PhraseEmitter {
     protected StringBuilder m_builder = new StringBuilder();
     protected int m_maxDepth;

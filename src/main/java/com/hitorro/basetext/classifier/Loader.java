@@ -30,10 +30,7 @@ import java.io.FilenameFilter;
 import java.util.Stack;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- * <p/>
+
  * Load a set of documents in and pass them to either the isQuestionClassifier or to the trainer.
  */
 public class Loader {

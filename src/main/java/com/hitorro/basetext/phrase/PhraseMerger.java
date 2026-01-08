@@ -23,11 +23,7 @@ package com.hitorro.basetext.phrase;
 
 import com.hitorro.util.core.iterator.LikeRowMerger;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public class PhraseMerger implements LikeRowMerger<PhraseElement> {
     public static final PhraseMerger pm = new PhraseMerger();
 

@@ -29,11 +29,7 @@ import com.hitorro.util.io.resourcecache.file.FileResourcePropertyKey;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public class PhraseIndexSingletonCache extends BaseMapper<Object, PhraseIndex> {
     public static final String DFIndexSingletonCacheEventKey = "PhraseIndexSingletonCache";
     public static final FileResourcePropertyKey PropKey =

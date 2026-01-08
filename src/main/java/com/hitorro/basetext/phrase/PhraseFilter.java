@@ -28,11 +28,7 @@ import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 
 import java.io.IOException;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 public class PhraseFilter extends TokenFilter {
     String buf[];
     private BaseDFIndexInterface baseIndex;
