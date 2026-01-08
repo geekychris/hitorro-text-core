@@ -34,7 +34,6 @@ import com.hitorro.util.core.events.cache.SingletonCache;
 import com.hitorro.util.json.keys.StringProperty;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 17, 2005 Time: 3:48:45 PM
  */
 @CommandDef(command = "text.dumpdfterm", description = "Dump the frequency of a term")
 public class DumpDF extends Command {

@@ -27,7 +27,6 @@ import com.hitorro.basetext.filter.core.TextFilter;
 import java.io.File;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 5, 2003 Time: 9:20:32 PM
  */
 public class ContentQueueJob {
     private TextFilter m_textFilter = null;

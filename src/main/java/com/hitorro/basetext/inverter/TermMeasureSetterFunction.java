@@ -26,7 +26,6 @@ import com.hitorro.basetext.dfindex.DFIndex;
 /**
  * Dummy function that sets term measures to a fixed value (such as 1.0).
  * <p/>
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris
  */
 public class TermMeasureSetterFunction extends TermMeasureFunction {
     private double value;

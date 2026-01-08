@@ -44,7 +44,6 @@ import com.hitorro.util.json.keys.StringProperty;
 import java.util.List;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 12, 2005 Time: 8:41:43 AM
  */
 @CommandDef(command = "text.inverturl", description = "Fetch the content of the url and invert it")
 public class InvertUrlContent extends com.hitorro.util.commandandcontrol.Command {

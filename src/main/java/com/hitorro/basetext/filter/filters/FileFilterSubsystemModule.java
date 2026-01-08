@@ -28,7 +28,6 @@ import java.util.List;
 import java.util.Vector;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 5, 2003 Time: 6:25:58 PM To
  */
 
 @ServiceDefinition(dependentService = {},

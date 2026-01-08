@@ -36,7 +36,6 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 13, 2005 Time: 10:08:58 AM
  * <p/>
  * Group of tuple sets that represent a document
  */

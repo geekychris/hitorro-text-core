@@ -22,7 +22,6 @@
 package com.hitorro.basetext.winnow;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 5, 2003 Time: 6:11:04 PM To
  */
 public class WInnowTestDriver {
 

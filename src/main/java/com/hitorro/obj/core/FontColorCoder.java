@@ -42,7 +42,6 @@ import java.util.Map;
 
 /**
  * <p/>
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Sep 4, 2005 Time: 1:07:16 PM Color code text
  * for html rendering based upon the frequency of text.
  */
 public class FontColorCoder {

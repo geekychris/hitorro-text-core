@@ -26,7 +26,6 @@ import com.hitorro.basetext.filter.core.TextFilter;
 import java.io.File;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 5, 2003 Time: 8:33:31 PM To
  */
 public class HtmlTextFilter implements TextFilter {
     public File convert(File in, File out) {

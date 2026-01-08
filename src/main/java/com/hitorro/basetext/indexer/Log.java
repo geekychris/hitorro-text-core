@@ -24,7 +24,6 @@ package com.hitorro.basetext.indexer;
 import com.hitorro.util.log.Logger;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Nov 10, 2006 Time: 10:57:51 AM
  */
 public class Log {
     public static final Logger indexer = Logger.getLogger("ht.index");

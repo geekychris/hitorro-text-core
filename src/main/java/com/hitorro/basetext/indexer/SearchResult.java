@@ -33,7 +33,6 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Nov 28, 2006 Time: 8:55:05 AM
  */
 public class SearchResult {
     private String m_guid;

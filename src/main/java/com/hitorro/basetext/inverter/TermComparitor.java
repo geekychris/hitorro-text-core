@@ -24,7 +24,6 @@ package com.hitorro.basetext.inverter;
 import java.util.Comparator;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 10, 2005 Time: 11:01:25 AM
  */
 public class TermComparitor implements Comparator<TermTuple> {
     public int compare(TermTuple termTuple, TermTuple termTuple1) {

@@ -27,7 +27,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Mar 22, 2008 Time: 7:17:33 PM To change
  */
 public class BaseContainerClassTest<E extends TermTuple> {
     protected List<E> container = new ArrayList();

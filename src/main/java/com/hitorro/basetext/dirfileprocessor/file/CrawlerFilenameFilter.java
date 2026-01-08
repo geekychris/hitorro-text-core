@@ -26,7 +26,6 @@ import java.io.FilenameFilter;
 import java.util.List;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 5, 2003 Time: 7:09:34 PM
  */
 public class CrawlerFilenameFilter implements FilenameFilter {
     private String m_extensions[] = {"doc", "xls", "txt"};

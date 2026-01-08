@@ -34,7 +34,6 @@ import com.hitorro.util.json.keys.StringProperty;
 
 /**
  * <p/>
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 11, 2007
  * http://feeds.feedburner.com/~r/chrisbrogandotcom/~3/167895307/ <http://feeds.feedburner.com/%7Er/chrisbrogandotcom/%7E3/167895307/
  * <p/>
  * Time: 1:51:56 PM

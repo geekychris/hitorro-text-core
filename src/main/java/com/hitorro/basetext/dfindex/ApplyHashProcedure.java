@@ -25,7 +25,6 @@ package com.hitorro.basetext.dfindex;
 import gnu.trove.procedure.TLongIntProcedure;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 10, 2005 Time: 4:29:07 PM
  */
 public class ApplyHashProcedure implements TLongIntProcedure {
     private DFIndex m_index;

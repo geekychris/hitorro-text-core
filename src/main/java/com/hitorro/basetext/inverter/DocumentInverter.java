@@ -36,7 +36,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 9, 2005 Time: 9:28:13 PM
  */
 public class DocumentInverter {
     private SingletonCache<DFIndex> m_cache = DFIndexSingletonMapper.getSingleton();

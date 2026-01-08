@@ -33,7 +33,6 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 11, 2005 Time: 8:35:30 AM
  */
 public class DFIndexSingletonMapper extends BaseMapper<Object, DFIndex> {
     public static final String DFIndexSingletonCacheEventKey = "DFIndexSingletonCache";

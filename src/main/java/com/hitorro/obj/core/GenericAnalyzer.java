@@ -31,7 +31,6 @@ import java.io.IOException;
 import java.io.Reader;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 17, 2006 Time: 4:59:30 PM Analyzer used
  * by lucene and any other text processing where we need to breakdown a stream into tokens.
  * <p/>
  * Since filters do not necessessarily make sense to be created in random order, this analyzer takes a bitmask of

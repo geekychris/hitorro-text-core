@@ -24,7 +24,6 @@ package com.hitorro.basetext.winnow;
 import java.io.*;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 21, 2004 Time: 10:23:03 AM
  */
 public class HashWriterImpl
         implements HashWriter {

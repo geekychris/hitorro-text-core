@@ -26,7 +26,6 @@ import com.hitorro.util.html.HTMLPage;
 import java.io.File;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 13, 2005 Time: 6:19:29 PM
  */
 public class ODPFetchElement {
     public String m_url;

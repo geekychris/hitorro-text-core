@@ -43,7 +43,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 17, 2006 Time: 4:49:59 PM
  * <p/>
  * Enumeration of available Filters
  */

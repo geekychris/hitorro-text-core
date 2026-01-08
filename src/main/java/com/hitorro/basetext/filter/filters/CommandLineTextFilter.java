@@ -31,7 +31,6 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 5, 2003 Time: 8:32:19 PM To
  * <p/>
  * Description:
  */

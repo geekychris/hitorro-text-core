@@ -29,7 +29,6 @@ import com.hitorro.util.html.HTMLPageFetcher;
 import com.hitorro.util.urlparser.UrlCursor;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Feb 19, 2008 Time: 8:22:26 AM To change this
  * template use File | Settings | File Templates.
  */
 class ODPFarmCommand extends FarmCommand<ODPFetchElement, ODPFetchElement, Object> {

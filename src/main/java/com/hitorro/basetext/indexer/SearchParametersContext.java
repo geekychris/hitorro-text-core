@@ -22,7 +22,6 @@
 package com.hitorro.basetext.indexer;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Nov 21, 2006 Time: 4:32:20 PM
  */
 public class SearchParametersContext {
 }

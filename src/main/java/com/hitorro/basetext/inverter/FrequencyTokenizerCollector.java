@@ -30,7 +30,6 @@ import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import java.io.IOException;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 9, 2005 Time: 10:55:44 AM
  */
 public class FrequencyTokenizerCollector {
     private TObjectIntHashMap m_map = new TObjectIntHashMap();

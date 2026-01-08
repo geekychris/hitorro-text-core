@@ -23,7 +23,6 @@ package com.hitorro.obj.core;
 
 /**
  * <p/>
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Aug 31, 2005 Time: 2:47:56 PM
  */
 public class TSInterceptorContext {
     public InterceptorTokenFilter interceptor;

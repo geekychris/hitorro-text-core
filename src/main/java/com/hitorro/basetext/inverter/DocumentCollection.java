@@ -33,7 +33,6 @@ import java.util.List;
 /**
  * Collection of documents to be inverted
  * <p/>
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris
  */
 public class DocumentCollection {
     private List<TermTupleSetGroup> docs = new ArrayList<TermTupleSetGroup>();

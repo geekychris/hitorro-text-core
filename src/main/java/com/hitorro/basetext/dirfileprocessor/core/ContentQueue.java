@@ -26,7 +26,6 @@ import com.hitorro.util.core.Log;
 import java.io.File;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 5, 2003 Time: 6:04:54 PM To
  */
 public class ContentQueue {
 

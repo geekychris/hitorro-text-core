@@ -34,7 +34,6 @@ import com.hitorro.util.xml.RDFHandler;
 import java.io.File;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 13, 2005 Time: 4:17:22 PM
  */
 public class ODPRdfHandler extends RDFHandler {
     private File m_root;

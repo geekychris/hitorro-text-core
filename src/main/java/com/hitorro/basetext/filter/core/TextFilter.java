@@ -24,7 +24,6 @@ package com.hitorro.basetext.filter.core;
 import java.io.File;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 5, 2003 Time: 8:30:44 PM To
  */
 public interface TextFilter {
     File convert(File in, File out);

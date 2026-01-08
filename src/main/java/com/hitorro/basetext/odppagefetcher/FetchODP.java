@@ -30,7 +30,6 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 13, 2005 Time: 5:53:35 PM
  */
 public class FetchODP {
     public void fetch(File odpFile) throws IOException, ParserConfigurationException, SAXException {

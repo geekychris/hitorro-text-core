@@ -37,7 +37,6 @@ import java.util.*;
 import java.util.function.Predicate;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 9, 2005 Time: 5:56:23 PM
  */
 @TypeClassMetaInfo(shortTypeName = TypeClassMetaInfo.TermTupleSet,
         isView = false,

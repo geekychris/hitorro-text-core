@@ -27,7 +27,6 @@ import com.hitorro.util.typesystem.annotation.UiProperties;
 import com.hitorro.util.typesystem.valuesource.ValueSourceForClass;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Nov 21, 2006 Time: 4:33:00 PM
  */
 public class SearchParametersValueSource implements ValueSourceForClass {
     private TypeIntf m_type;

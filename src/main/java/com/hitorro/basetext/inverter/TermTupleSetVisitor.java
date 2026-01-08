@@ -22,7 +22,6 @@
 package com.hitorro.basetext.inverter;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 9, 2005 Time: 8:01:33 PM
  */
 public interface TermTupleSetVisitor {
     boolean visit(TermTuple t, TermTuple otherT, Mode mode);

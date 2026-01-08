@@ -25,7 +25,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 10, 2005 Time: 10:47:41 AM
  */
 public class TestVisitor implements TermTupleSetVisitor {
 

@@ -26,7 +26,6 @@ import com.hitorro.util.core.string.StringUtil;
 import java.util.BitSet;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 17, 2006 Time: 4:48:24 PM
  * <p/>
  * NamedBitsOfLong oriented mapping of the filters associated with a filter pipeline
  */

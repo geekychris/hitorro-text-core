@@ -28,7 +28,6 @@ import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import java.io.IOException;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 17, 2005 Time: 3:25:31 PM
  */
 public class NumberFilter extends TokenFilter {
     private CharTermAttribute termAtt;

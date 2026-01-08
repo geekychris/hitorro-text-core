@@ -24,7 +24,6 @@ package com.hitorro.basetext.winnow;
 import com.hitorro.util.core.Log;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 21, 2004 Time: 10:24:04 AM
  */
 public class WinnowingHashWriter implements HashWriter {
     int m_initialSize;

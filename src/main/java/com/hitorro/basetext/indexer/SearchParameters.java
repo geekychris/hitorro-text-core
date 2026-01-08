@@ -30,7 +30,6 @@ import java.io.IOException;
 import java.util.HashMap;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Nov 21, 2006 Time: 4:35:10 PM
  */
 public class SearchParameters implements HTSerializable {
     private HashMap<String, String> m_vals = new HashMap<String, String>();

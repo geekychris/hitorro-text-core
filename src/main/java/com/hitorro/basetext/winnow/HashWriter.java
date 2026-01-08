@@ -22,7 +22,6 @@
 package com.hitorro.basetext.winnow;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 21, 2004 Time: 10:22:18 AM To
  */
 public interface HashWriter {
     boolean write(int hash, int position);

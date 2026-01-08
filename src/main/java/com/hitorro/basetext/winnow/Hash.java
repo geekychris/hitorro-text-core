@@ -27,7 +27,6 @@ import com.hitorro.util.io.FileUtil;
 import java.io.File;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 18, 2004 Time: 12:27:50 PM
  */
 public class Hash {
     public static int HASHBASE = 2;

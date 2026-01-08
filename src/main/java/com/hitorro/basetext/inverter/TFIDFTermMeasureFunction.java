@@ -24,7 +24,6 @@ package com.hitorro.basetext.inverter;
 import com.hitorro.basetext.dfindex.DFIndex;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 10, 2005 Time: 3:51:44 PM
  * <p/>
  * Classic TFIDF calculation.
  */

@@ -35,7 +35,6 @@ import java.util.Arrays;
 import java.util.Date;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Jan 9, 2005 Time: 9:01:19 AM Encapsulation
  * of terms - > frequency
  * <p/>
  * The df corpus has a defined doc Frequency (how many documents). When asking for the term frequency, we will cutoff
