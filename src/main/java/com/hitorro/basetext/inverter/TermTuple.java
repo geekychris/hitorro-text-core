@@ -44,29 +44,29 @@ public class TermTuple implements HTSerializable {
     public int tf;
     public int id;
     String m_term;
-    double m_normTf;
+    double normTf;
     // Measure could be tfIdf or some other measure of relative worth.
-    boolean m_isTermMeasure = false;
-    double m_termMeasure;
+    boolean isTermMeasure = false;
+    double termMeasure;
     // token frequency in the corpus.
     double m_df;
-    double m_normDf;
-    boolean m_isGoodValue = true;
+    double normDf;
+    boolean isGoodValue = true;
 
     public String toString() {
-        return Fmt.S("t: %s isGood: %s, measure:%s", m_term, m_isGoodValue, m_termMeasure);
+        return Fmt.S("t: %s isGood: %s, measure:%s", m_term, isGoodValue, termMeasure);
     }
 
     public double getNormalizedDF() {
-        return m_normDf;
+        return normDf;
     }
 
     public double getMeasure() {
-        return m_termMeasure;
+        return termMeasure;
     }
 
     public boolean isGood() {
-        return m_isGoodValue && m_termMeasure != Double.NEGATIVE_INFINITY;
+        return isGoodValue && termMeasure != Double.NEGATIVE_INFINITY;
     }
 
     public String getTerm() {
@@ -74,22 +74,22 @@ public class TermTuple implements HTSerializable {
     }
 
     public void normalizeTF(int documentSize) {
-        m_normTf = ((double) tf / documentSize) * TFMultFactor;
+        normTf = ((double) tf / documentSize) * TFMultFactor;
     }
 
     public double computeNormalizedDF(int dfCount, double corpusDocSize) {
-        m_normDf = ((double) dfCount / corpusDocSize) * DFMultiFactor;
-        return m_normDf;
+        normDf = ((double) dfCount / corpusDocSize) * DFMultiFactor;
+        return normDf;
     }
 
 
     public double getNormalizedTF() {
-        return m_normTf;
+        return normTf;
     }
 
     public void setTermMeasure(double termMeasure) {
-        m_isTermMeasure = true;
-        m_termMeasure = termMeasure;
+        isTermMeasure = true;
+        this.termMeasure = termMeasure;
     }
 
     public void setDF(double df) {
@@ -107,13 +107,13 @@ public class TermTuple implements HTSerializable {
         os.writeString(m_term);
         os.writeLong(m_hash);
         os.writeInt(tf);
-        os.writeDouble(m_normTf);
-        os.writeBoolean(m_isTermMeasure);
-        if (m_isTermMeasure) {
-            os.writeBoolean(m_isGoodValue);
-            os.writeDouble(m_termMeasure);
+        os.writeDouble(normTf);
+        os.writeBoolean(isTermMeasure);
+        if (isTermMeasure) {
+            os.writeBoolean(isGoodValue);
+            os.writeDouble(termMeasure);
             os.writeDouble(m_df);
-            os.writeDouble(m_normDf);
+            os.writeDouble(normDf);
         }
     }
 
@@ -123,13 +123,13 @@ public class TermTuple implements HTSerializable {
         m_term = is.readString();
         m_hash = is.readLong();
         tf = is.readInt();
-        m_normTf = is.readDouble();
-        m_isTermMeasure = is.readBoolean();
-        if (m_isTermMeasure) {
-            m_isGoodValue = is.readBoolean();
-            m_termMeasure = is.readDouble();
+        normTf = is.readDouble();
+        isTermMeasure = is.readBoolean();
+        if (isTermMeasure) {
+            isGoodValue = is.readBoolean();
+            termMeasure = is.readDouble();
             m_df = is.readDouble();
-            m_normDf = is.readDouble();
+            normDf = is.readDouble();
         }
     }
 

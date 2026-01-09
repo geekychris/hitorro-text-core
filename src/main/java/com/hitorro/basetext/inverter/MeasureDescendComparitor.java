@@ -28,10 +28,10 @@ import java.util.Comparator;
 public class MeasureDescendComparitor implements Comparator<TermTuple> {
 
     public int compare(TermTuple termTuple, TermTuple termTuple1) {
-        if (termTuple.m_termMeasure > termTuple1.m_termMeasure) {
+        if (termTuple.termMeasure > termTuple1.termMeasure) {
             return -1;
         }
-        if (termTuple.m_termMeasure < termTuple1.m_termMeasure) {
+        if (termTuple.termMeasure < termTuple1.termMeasure) {
             return 1;
         }
         return 0;

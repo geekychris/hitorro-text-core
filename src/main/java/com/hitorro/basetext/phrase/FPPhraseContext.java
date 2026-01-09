@@ -42,13 +42,13 @@ import com.hitorro.util.core.hash.FPHash64;
  */
 public class FPPhraseContext {
     protected StringBuilder m_builder = new StringBuilder();
-    protected int m_maxDepth;
+    protected int maxDepth;
     protected char m_buffer[][];
-    protected int m_bufferL[];
+    protected int bufferL[];
 
-    protected long m_fpbuffer[];
+    protected long fpbuffer[];
     protected int m_fill = 0;
-    protected int m_currRead = 0;
+    protected int currRead = 0;
     protected boolean recordStrings = true;
     protected FPHashDict baseIndex;
     int counter = 0;
@@ -56,10 +56,10 @@ public class FPPhraseContext {
     private int charEndOffset;
 
     public FPPhraseContext(int maxDepth, FPHashDict baseIndex, boolean recordStrings) {
-        m_maxDepth = maxDepth;
+        this.maxDepth = maxDepth;
         m_buffer = new char[maxDepth][];
-        m_bufferL = new int[maxDepth];
-        m_fpbuffer = new long[maxDepth];
+        bufferL = new int[maxDepth];
+        fpbuffer = new long[maxDepth];
         this.recordStrings = recordStrings;
         if (recordStrings) {
             for (int i = 0; i < maxDepth; i++) {
@@ -71,12 +71,12 @@ public class FPPhraseContext {
 
     public void reset() {
         m_fill = 0;
-        m_currRead = 0;
+        currRead = 0;
     }
 
     public void end() {
-        while (m_fill > m_currRead) {
-            getHashSlidingWindow(m_fill - m_currRead);
+        while (m_fill > currRead) {
+            getHashSlidingWindow(m_fill - currRead);
         }
     }
 
@@ -86,34 +86,34 @@ public class FPPhraseContext {
             if (i > 0) {
                 m_builder.append(" ");
             }
-            m_builder.append(get(i + m_currRead));
+            m_builder.append(get(i + currRead));
         }
         return m_builder.toString();
     }
 
     protected final void getHashSlidingWindow(int depth) {
         if (this.recordStrings) {
-            long fp = m_fpbuffer[m_currRead % m_maxDepth];
+            long fp = fpbuffer[currRead % maxDepth];
             // single word
-            phraseEmit(fp, m_currRead, 1, getSlidingWindowText(1), charStartOffset, charEndOffset);
+            phraseEmit(fp, currRead, 1, getSlidingWindowText(1), charStartOffset, charEndOffset);
             int ind;
             for (int i = 1; i < depth; i++) {
-                ind = i + m_currRead;
-                fp = FPHash64.combineFingerPrints(fp, m_fpbuffer[ind % m_maxDepth]);
-                phraseEmit(fp, m_currRead, i + 1, getSlidingWindowText(i + 1), charStartOffset, charEndOffset);
+                ind = i + currRead;
+                fp = FPHash64.combineFingerPrints(fp, fpbuffer[ind % maxDepth]);
+                phraseEmit(fp, currRead, i + 1, getSlidingWindowText(i + 1), charStartOffset, charEndOffset);
             }
-            m_currRead++;
+            currRead++;
         } else {
-            long fp = m_fpbuffer[m_currRead % m_maxDepth];
+            long fp = fpbuffer[currRead % maxDepth];
             // single word
-            phraseEmit(fp, m_currRead, 1, null, charStartOffset, charEndOffset);
+            phraseEmit(fp, currRead, 1, null, charStartOffset, charEndOffset);
             int ind;
             for (int i = 1; i < depth; i++) {
-                ind = i + m_currRead;
-                fp = FPHash64.combineFingerPrints(fp, m_fpbuffer[ind % m_maxDepth]);
-                phraseEmit(fp, m_currRead, i + 1, null, charStartOffset, charEndOffset);
+                ind = i + currRead;
+                fp = FPHash64.combineFingerPrints(fp, fpbuffer[ind % maxDepth]);
+                phraseEmit(fp, currRead, i + 1, null, charStartOffset, charEndOffset);
             }
-            m_currRead++;
+            currRead++;
         }
     }
 
@@ -140,26 +140,26 @@ public class FPPhraseContext {
     }
 
     protected final String get(final int i) {
-        int ind = i % m_maxDepth;
-        return new String(m_buffer[ind], 0, m_bufferL[ind]);
+        int ind = i % maxDepth;
+        return new String(m_buffer[ind], 0, bufferL[ind]);
     }
 
     protected void add(final char buff[], int length, int charStartOffset, int charEndOffset) {
         this.charStartOffset = charStartOffset;
         this.charEndOffset = charEndOffset;
-        int ind = m_fill % m_maxDepth;
+        int ind = m_fill % maxDepth;
         if (recordStrings) {
             if (m_buffer[ind].length < length) {
                 m_buffer[ind] = new char[length];
             }
             System.arraycopy(buff, 0, m_buffer[ind], 0, length);
-            m_bufferL[ind] = length;
+            bufferL[ind] = length;
         }
-        m_fpbuffer[ind] = FPHash64.getFingerprint(buff, length);
+        fpbuffer[ind] = FPHash64.getFingerprint(buff, length);
 
         m_fill++;
-        if (m_fill >= m_maxDepth) {
-            getHashSlidingWindow(m_maxDepth);
+        if (m_fill >= maxDepth) {
+            getHashSlidingWindow(maxDepth);
         }
         // XXX TEST
         //has = true;

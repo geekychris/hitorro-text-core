@@ -49,18 +49,18 @@ public class TermTupleSetGroup implements HTSerializable {
     private String m_id;
     private List<TermTupleSet> m_sets = new ArrayList<TermTupleSet>();
 
-    private Comparator<TermTuple> m_defaultSort;
-    private TermMeasureFunction m_defaultFunc;
-    private DocumentInverter m_documentInverter;
+    private Comparator<TermTuple> defaultSort;
+    private TermMeasureFunction defaultFunc;
+    private DocumentInverter documentInverter;
 
     public TermTupleSetGroup(String field, String filters, Comparator<TermTuple> sortFunction, TermMeasureFunction func) {
-        m_defaultSort = sortFunction;
-        m_defaultFunc = func;
-        m_documentInverter = new DocumentInverter(field, filters, func, sortFunction);
+        defaultSort = sortFunction;
+        defaultFunc = func;
+        documentInverter = new DocumentInverter(field, filters, func, sortFunction);
     }
 
     public void setSortFunction(Comparator<TermTuple> sortFunc) {
-        m_defaultSort = sortFunc;
+        defaultSort = sortFunc;
     }
 
     public String getId() {
@@ -86,7 +86,7 @@ public class TermTupleSetGroup implements HTSerializable {
     }
 
     public void add(String section, String text, IsoLanguage language) throws IOException {
-        this.addTupleSet(m_documentInverter.setText(section, text, language));
+        this.addTupleSet(documentInverter.setText(section, text, language));
     }
 
     /**
@@ -167,11 +167,11 @@ public class TermTupleSetGroup implements HTSerializable {
      * @return
      */
     public TermTupleSet getByName(String setName) {
-        return getByName(setName, m_defaultSort, m_defaultFunc, false);
+        return getByName(setName, defaultSort, defaultFunc, false);
     }
 
     public TermTupleSet getByName(String setName, DFIndex index) {
-        return getByName(setName, m_defaultSort, m_defaultFunc, false, index);
+        return getByName(setName, defaultSort, defaultFunc, false, index);
     }
 
     protected TermTupleSet getByNameAux(String setName) {

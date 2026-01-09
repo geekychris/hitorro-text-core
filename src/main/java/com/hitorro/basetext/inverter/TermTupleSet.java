@@ -53,11 +53,11 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
     private int m_wordCount = 0;
     private String m_sectionName;
 
-    private List<E> m_termTuples = new ArrayList<E>();
+    private List<E> termTuples = new ArrayList<E>();
 
 
-    private Comparator m_comparatorUsed = null;
-    private TermMeasureFunction m_previousFunc = null;
+    private Comparator comparatorUsed = null;
+    private TermMeasureFunction previousFunc = null;
 
     private String id;
 
@@ -78,7 +78,7 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
      */
     public int visit(TermVisitor collection, Predicate<E> constraint) {
         int counter = 0;
-        for (E t : m_termTuples) {
+        for (E t : termTuples) {
             if (constraint.test(t)) {
                 counter++;
                 collection.add(t);
@@ -94,7 +94,7 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
      * @return
      */
     public boolean match(HTPredicate<E> constraint) {
-        for (E t : m_termTuples) {
+        for (E t : termTuples) {
             if (constraint.test(t)) {
                 return true;
             }
@@ -108,13 +108,13 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
      * @return
      */
     public SparseVector<TermTupleSet> getSparseVectorWithHash() {
-        int size = m_termTuples.size();
+        int size = termTuples.size();
         TermTuple tt;
         SparseVector<TermTupleSet> v = new SparseVector<TermTupleSet>(size, -1);
         v.setReferrer(this);
         for (int i = 0; i < size; i++) {
-            tt = m_termTuples.get(i);
-            v.setNextElement(tt.m_hash, tt.m_termMeasure);
+            tt = termTuples.get(i);
+            v.setNextElement(tt.m_hash, tt.termMeasure);
         }
         return v;
     }
@@ -136,15 +136,15 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
      */
     public void prune(double minMeasure, int maxTerms) {
 
-        int startIndex = m_termTuples.size() - 1;
+        int startIndex = termTuples.size() - 1;
         for (int i = startIndex; i > 0; i--) {
-            E e = m_termTuples.get(i);
+            E e = termTuples.get(i);
             if (!e.isGood() || e.getMeasure() < minMeasure) {
-                m_termTuples.remove(i);
+                termTuples.remove(i);
             }
         }
 
-        ListUtil.pruneListToLength(m_termTuples, maxTerms);
+        ListUtil.pruneListToLength(termTuples, maxTerms);
 
     }
 
@@ -162,7 +162,7 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
     }
 
     public void add(E tt) {
-        m_termTuples.add(tt);
+        termTuples.add(tt);
     }
 
     public void sortByHashAscend() {
@@ -183,7 +183,7 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
 
 
     public boolean sortByIfNotAlreadySorted(Comparator<TermTuple> sortFunc) {
-        if (sortFunc == m_comparatorUsed) {
+        if (sortFunc == comparatorUsed) {
             return false;
         }
         sort(sortFunc);
@@ -192,16 +192,16 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
 
     public void sort(Comparator<TermTuple> sortFunc) {
 
-        m_comparatorUsed = sortFunc;
-        Collections.sort(m_termTuples, sortFunc);
+        comparatorUsed = sortFunc;
+        Collections.sort(termTuples, sortFunc);
     }
 
     public List<E> getTuplesList() {
-        return m_termTuples;
+        return termTuples;
     }
 
     public boolean computeTermMeasureIfNotAlready(TermMeasureFunction func) {
-        if (func == m_previousFunc) {
+        if (func == previousFunc) {
             return false;
         }
         computeTermMeasure(func);
@@ -209,8 +209,8 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
     }
 
     public void computeTermMeasure(TermMeasureFunction func) {
-        m_previousFunc = func;
-        for (TermTuple tt : m_termTuples) {
+        previousFunc = func;
+        for (TermTuple tt : termTuples) {
             func.compute(tt, this);
         }
     }
@@ -228,7 +228,7 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
         sortByIfNotAlreadySorted(s_HashAscend);
         TermTupleSet set = new TermTupleSet();
         set.setSectionName(sectionName);
-        Iterator<E> iter = m_termTuples.iterator();
+        Iterator<E> iter = termTuples.iterator();
         Iterator<E> otherIter = b.getTuplesList().iterator();
         TermTuple tuple = null;
         if (iter.hasNext()) {
@@ -281,7 +281,7 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
 
     public void visit(TermTupleSetVisitor visitor) {
         sortByIfNotAlreadySorted(s_HashAscend);
-        Iterator<E> iter = m_termTuples.iterator();
+        Iterator<E> iter = termTuples.iterator();
         while (iter.hasNext()) {
             visitor.visit(iter.next(), null, TermTupleSetVisitor.Mode.LeftAvailable);
         }
@@ -297,7 +297,7 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
         setIn.sortByIfNotAlreadySorted(s_HashAscend);
         sortByIfNotAlreadySorted(s_HashAscend);
         List<E> l = setIn.getTuplesList();
-        Iterator<E> iter = m_termTuples.iterator();
+        Iterator<E> iter = termTuples.iterator();
         Iterator<E> otherIter = l.iterator();
         TermTuple tuple = null;
         TermTuple otherTuple = null;
@@ -333,7 +333,7 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
         return
          */
         int count = 0;
-        int size = m_termTuples.size();
+        int size = termTuples.size();
         int hashSize = hash.length;
         if (size == 0) {
             // return the empty vector
@@ -342,9 +342,9 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
         }
 
         int ind = 0;
-        long termHash = m_termTuples.get(0).m_hash;
+        long termHash = termTuples.get(0).m_hash;
         for (int i = 0; i < size; i++) {
-            termHash = m_termTuples.get(i).m_hash;
+            termHash = termTuples.get(i).m_hash;
             if (hash[ind] < termHash) {
                 // advance the hash array
                 while (ind < hashSize && hash[ind] < termHash) {
@@ -368,7 +368,7 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
 
         count = 0;
         for (int i = 0; i < size; i++) {
-            termHash = m_termTuples.get(i).m_hash;
+            termHash = termTuples.get(i).m_hash;
             if (hash[ind] < termHash) {
                 // advance the hash array
                 while (ind < hashSize && hash[ind] < termHash) {
@@ -376,9 +376,9 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
                 }
             }
             if (hash[ind] == termHash) {
-                sv.setNextElement(ind, m_termTuples.get(i).m_termMeasure);
+                sv.setNextElement(ind, termTuples.get(i).termMeasure);
                 if (terms != null) {
-                    terms[ind] = m_termTuples.get(i).m_term;
+                    terms[ind] = termTuples.get(i).m_term;
                 }
                 count++;
             }
@@ -398,7 +398,7 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
         setIn.sortByIfNotAlreadySorted(s_HashAscend);
         sortByIfNotAlreadySorted(s_HashAscend);
         List<E> l = setIn.getTuplesList();
-        Iterator<E> iter = m_termTuples.iterator();
+        Iterator<E> iter = termTuples.iterator();
         Iterator<E> otherIter = l.iterator();
         TermTuple tuple = iter.next();
         TermTuple otherTuple = otherIter.next();
@@ -432,7 +432,7 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
      * @param index
      */
     public void addDocumentToDF(DFIndex index) {
-        for (TermTuple tt : m_termTuples) {
+        for (TermTuple tt : termTuples) {
             index.incrementFrequency(tt.m_hash);
         }
         index.incrementAccumulativeDocLength(getWordCount());
@@ -446,7 +446,7 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
      * @param currentSet
      */
     public void fillHitMap(TLongIntHashMap currentSet) {
-        for (TermTuple tt : m_termTuples) {
+        for (TermTuple tt : termTuples) {
             if (!currentSet.contains(tt.m_hash)) {
                 currentSet.put(tt.m_hash, 1);
             }
@@ -457,14 +457,14 @@ public class TermTupleSet<E extends TermTuple> implements HTSerializable {
         os.writeInt(getSerializationVersion());
         os.writeString(m_sectionName);
         os.writeInt(m_wordCount);
-        os.writeListOfHTSerializable(this.m_termTuples);
+        os.writeListOfHTSerializable(this.termTuples);
     }
 
     public void deserialize(HTObjectInputStream is) throws IOException, ClassNotFoundException, StoreException {
         int version = is.readInt();
         m_sectionName = is.readString();
         m_wordCount = is.readInt();
-        is.readListOfHTSerializable(m_termTuples);
+        is.readListOfHTSerializable(termTuples);
     }
 
     public int getSerializationVersion() {

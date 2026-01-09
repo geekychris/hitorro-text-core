@@ -60,7 +60,7 @@ public class FPPhraseEmitter extends PhraseEmitter {
     }
 
     protected final void add(String tok) {
-        int pos = m_fill % m_maxDepth;
+        int pos = m_fill % maxDepth;
         m_buffer[pos] = tok;
         fps[pos] = FPHash64.getFP(tok);
         m_fill++;
@@ -71,12 +71,12 @@ public class FPPhraseEmitter extends PhraseEmitter {
     }
 
     public String getRow() {
-        int ind = (addPtr - queueSize) % m_maxDepth;
+        int ind = (addPtr - queueSize) % maxDepth;
         return buf[ind];
     }
 
     public int getRowLength() {
-        int ind = (addPtr - queueSize) % m_maxDepth;
+        int ind = (addPtr - queueSize) % maxDepth;
         return this.buf[ind].length();
     }
 
@@ -89,7 +89,7 @@ public class FPPhraseEmitter extends PhraseEmitter {
     }
 
     protected final String getOutput(final int depth) {
-        String root = get(m_currRead);
+        String root = get(currRead);
         if (depth == 1) {
             return root;
         }
@@ -98,26 +98,26 @@ public class FPPhraseEmitter extends PhraseEmitter {
 
         for (int i = 1; i < depth; i++) {
             m_builder.append(" ");
-            m_builder.append(get(m_currRead + i));
+            m_builder.append(get(currRead + i));
         }
         return m_builder.toString();
     }
 
     protected final long getHash(int i) {
-        return fps[i % m_maxDepth];
+        return fps[i % maxDepth];
     }
 
     protected void emitAux(int maxLength) {
-        long fp = getHash(m_currRead);
+        long fp = getHash(currRead);
         int layer;
         for (int i = 1; i < maxLength; i++) {
-            fp = FPHash64.combineFingerPrints(fp, getHash(m_currRead + i));
+            fp = FPHash64.combineFingerPrints(fp, getHash(currRead + i));
             layer = index.hasPhrase(fp);
             if (layer != -1) {
-                buf[addPtr++ % m_maxDepth] = getOutput(i + 1);
+                buf[addPtr++ % maxDepth] = getOutput(i + 1);
                 this.queueSize++;
             }
         }
-        m_currRead++;
+        currRead++;
     }
 }

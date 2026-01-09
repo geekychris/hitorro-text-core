@@ -31,14 +31,14 @@ import com.hitorro.util.core.map.HashToIdAllocatingMap;
  * space of all ttsets.
  */
 public class TermSpaceGeneratorVisitor implements TermTupleSetVisitor {
-    private HashToIdAllocatingMap m_allocationMap;
+    private HashToIdAllocatingMap allocationMap;
 
     public TermSpaceGeneratorVisitor(HashToIdAllocatingMap map) {
-        m_allocationMap = map;
+        allocationMap = map;
     }
 
     public boolean visit(TermTuple t, TermTuple otherT, Mode mode) {
-        m_allocationMap.getDocIdWithIDAllocation(t.m_hash);
+        allocationMap.getDocIdWithIDAllocation(t.m_hash);
         return true;
     }
 }

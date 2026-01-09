@@ -42,16 +42,16 @@ public class ClassifierDoc {
     public static final String CategoryJoinToken = ":";
     private File m_file;
     private String[] m_category;
-    private String m_categoryString;
-    private TermTupleSetGroup m_tupleGroup = null;
+    private String categoryString;
+    private TermTupleSetGroup tupleGroup = null;
     private TermTupleSet m_set = null;
     private double m_minMeasure = 1000;
-    private int m_maxTuples = 140;
+    private int maxTuples = 140;
 
     public ClassifierDoc(File f, String[] category) {
         m_file = f;
         m_category = category;
-        m_categoryString = StringUtil.mergeWithJoinToken(m_category, CategoryJoinToken);
+        categoryString = StringUtil.mergeWithJoinToken(m_category, CategoryJoinToken);
     }
 
     /**
@@ -105,7 +105,7 @@ public class ClassifierDoc {
     }
 
     public String getCategory() {
-        return m_categoryString;
+        return categoryString;
     }
 
     public HTMLPage getHtmlPage() throws IOException {
@@ -128,13 +128,13 @@ public class ClassifierDoc {
     }
 
     public TermTupleSetGroup getTupleSetGroup() throws IOException {
-        if (m_tupleGroup == null) {
+        if (tupleGroup == null) {
             HTMLPage page = getHtmlPage();
             HTMLParser parser = page.getParser();
-            m_tupleGroup = InverterUtils.getMergedTupleSetFromPage(parser, "body", Iso639Table.english);
-            m_tupleGroup.merge("title", "body", "all");
+            tupleGroup = InverterUtils.getMergedTupleSetFromPage(parser, "body", Iso639Table.english);
+            tupleGroup.merge("title", "body", "all");
         }
-        return m_tupleGroup;
+        return tupleGroup;
     }
 
     public TermTupleSet getAll() throws IOException {
@@ -142,7 +142,7 @@ public class ClassifierDoc {
             TermTupleSetGroup g = getTupleSetGroup();
             if (g != null) {
                 m_set = g.getByName("all");
-                m_set.prune(m_minMeasure, m_maxTuples);
+                m_set.prune(m_minMeasure, maxTuples);
             }
         }
 

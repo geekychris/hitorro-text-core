@@ -56,7 +56,7 @@ public class PhraseIndex extends BaseDFIndex {
     public static final String FileName = "phraseindex.ind";
 
     private String m_description;
-    private String m_creationQuery;
+    private String creationQuery;
     private String m_creationDate = new Date().toString();
     private PrintWriter pw = null;
     private BaseFile dir;
@@ -98,7 +98,7 @@ public class PhraseIndex extends BaseDFIndex {
 
     public void setDetails(String description, String queryString) {
         m_description = description;
-        m_creationQuery = queryString;
+        creationQuery = queryString;
     }
 
     public String getDescription() {
@@ -106,7 +106,7 @@ public class PhraseIndex extends BaseDFIndex {
     }
 
     public String getQueryString() {
-        return m_creationQuery;
+        return creationQuery;
     }
 
     public String getCreationgDate() {
@@ -203,7 +203,7 @@ public class PhraseIndex extends BaseDFIndex {
     public void save(DataOutputStream dos) throws IOException {
         dos.writeShort(Version);
         dos.writeUTF(m_description);
-        dos.writeUTF(m_creationQuery);
+        dos.writeUTF(creationQuery);
         dos.writeUTF(m_creationDate);
         dos.writeInt(m_map.size());
         for (TLongIntIterator it = m_map.iterator(); it.hasNext(); ) {
@@ -241,7 +241,7 @@ public class PhraseIndex extends BaseDFIndex {
             return true;
         }
         this.m_description = dis.readUTF();
-        this.m_creationQuery = dis.readUTF();
+        this.creationQuery = dis.readUTF();
         this.m_creationDate = dis.readUTF();
 
         int size = dis.readInt();

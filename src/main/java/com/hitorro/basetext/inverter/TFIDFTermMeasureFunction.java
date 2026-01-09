@@ -30,7 +30,7 @@ import com.hitorro.basetext.dfindex.DFIndex;
 public class TFIDFTermMeasureFunction extends TermMeasureFunction {
     // if we can set a low water mark, if the work is too rare we dont want to consider it either.
 
-    private double m_dfMinTollerance = 0.30;
+    private double dfMinTollerance = 0.30;
 
 
     public TFIDFTermMeasureFunction() {
@@ -62,14 +62,14 @@ public class TFIDFTermMeasureFunction extends TermMeasureFunction {
         }
         int df = m_dfIndex.getFrequency(tt.m_hash);
         tt.m_df = df;
-        tt.m_isTermMeasure = true;
-        double dfD = tt.computeNormalizedDF(df, m_corpusSize);
-        if (dfD < m_dfMinTollerance) {
+        tt.isTermMeasure = true;
+        double dfD = tt.computeNormalizedDF(df, corpusSize);
+        if (dfD < dfMinTollerance) {
             // We hit a df level that is not acceptable
-            tt.m_termMeasure = -Double.MAX_VALUE;
-            tt.m_isGoodValue = false;
+            tt.termMeasure = -Double.MAX_VALUE;
+            tt.isGoodValue = false;
         } else {
-            tt.m_termMeasure = computeClassicTFIDF(tt.m_normTf, dfD);
+            tt.termMeasure = computeClassicTFIDF(tt.normTf, dfD);
         }
         return true;
     }

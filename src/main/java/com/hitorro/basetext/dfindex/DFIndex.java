@@ -52,14 +52,14 @@ public class DFIndex extends BaseDFIndex {
     public static final String FileName = "dfindex.ind";
 
 
-    private int m_docFrequency = 0;
+    private int docFrequency = 0;
 
-    private int m_freqMax = 0;
+    private int freqMax = 0;
 
-    private long m_accumDocLength = 0;
+    private long accumDocLength = 0;
 
     private String m_description;
-    private String m_creationQuery;
+    private String creationQuery;
     private String m_creationDate = new Date().toString();
 
     public DFIndex(int layer) {
@@ -68,7 +68,7 @@ public class DFIndex extends BaseDFIndex {
 
     public void setDetails(String description, String queryString) {
         m_description = description;
-        m_creationQuery = queryString;
+        creationQuery = queryString;
     }
 
     public String getDescription() {
@@ -76,7 +76,7 @@ public class DFIndex extends BaseDFIndex {
     }
 
     public String getQueryString() {
-        return m_creationQuery;
+        return creationQuery;
     }
 
     public String getCreationDate() {
@@ -84,15 +84,15 @@ public class DFIndex extends BaseDFIndex {
     }
 
     public void incrementAccumulativeDocLength(int length) {
-        m_accumDocLength += length;
+        accumDocLength += length;
     }
 
     public int getFrequencyMaxAbsolute() {
-        return m_freqMax;
+        return freqMax;
     }
 
     public void setFrequencyMaxAbsolute(int max) {
-        m_freqMax = max;
+        freqMax = max;
     }
 
     /**
@@ -101,8 +101,8 @@ public class DFIndex extends BaseDFIndex {
      * @return
      */
     public double getAverageDocLength() {
-        double l = m_accumDocLength;
-        double f = m_docFrequency;
+        double l = accumDocLength;
+        double f = docFrequency;
         return l / f;
     }
 
@@ -112,15 +112,15 @@ public class DFIndex extends BaseDFIndex {
      * @return
      */
     public int getDocFrequency() {
-        return m_docFrequency;
+        return docFrequency;
     }
 
     public void setDocFrequency(int freq) {
-        m_docFrequency = freq;
+        docFrequency = freq;
     }
 
     public void incrementDocFrequency() {
-        m_docFrequency++;
+        docFrequency++;
     }
 
     /**
@@ -132,8 +132,8 @@ public class DFIndex extends BaseDFIndex {
      * @param perc
      */
     public void setFrequencyMaxByPercentage(double perc) {
-        double d = m_docFrequency;
-        m_freqMax = (int) (d * (perc / 100));
+        double d = docFrequency;
+        freqMax = (int) (d * (perc / 100));
     }
 
     public void incrementFrequency(long hash) {
@@ -214,9 +214,9 @@ public class DFIndex extends BaseDFIndex {
      */
     public void save(DataOutputStream dos) throws IOException {
         dos.writeShort(Version);
-        dos.writeInt(m_docFrequency);
+        dos.writeInt(docFrequency);
         dos.writeUTF(m_description);
-        dos.writeUTF(m_creationQuery);
+        dos.writeUTF(creationQuery);
         dos.writeUTF(m_creationDate);
         dos.writeInt(m_map.size());
         for (TLongIntIterator it = m_map.iterator(); it.hasNext(); ) {
@@ -250,12 +250,12 @@ public class DFIndex extends BaseDFIndex {
      */
     private boolean read(DataInputStream dis) throws IOException {
         short ver = dis.readShort();
-        m_docFrequency = dis.readInt();
+        docFrequency = dis.readInt();
         if (ver != Version) {
             return true;
         }
         this.m_description = dis.readUTF();
-        this.m_creationQuery = dis.readUTF();
+        this.creationQuery = dis.readUTF();
         this.m_creationDate = dis.readUTF();
 
         int size = dis.readInt();
@@ -276,7 +276,7 @@ public class DFIndex extends BaseDFIndex {
 
     public int getFrequency(long hash) {
         int f = m_map.get(hash);
-        if (f > this.m_freqMax) {
+        if (f > this.freqMax) {
             // hit max
             return -1;
         }

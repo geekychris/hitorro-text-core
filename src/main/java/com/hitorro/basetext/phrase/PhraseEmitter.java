@@ -28,16 +28,16 @@ import java.io.IOException;
 
 public class PhraseEmitter {
     protected StringBuilder m_builder = new StringBuilder();
-    protected int m_maxDepth;
+    protected int maxDepth;
     protected String m_buffer[];
     protected int m_fill = 0;
-    protected int m_currRead = 0;
+    protected int currRead = 0;
 
 
     protected int minSize = 1;
 
     public PhraseEmitter(int maxDepth, int minLength) {
-        m_maxDepth = maxDepth;
+        this.maxDepth = maxDepth;
         m_buffer = new String[maxDepth];
         minSize = minLength - 1;
     }
@@ -48,15 +48,15 @@ public class PhraseEmitter {
     }
 
     public final void emit() throws IOException {
-        int maxLength = Math.min(m_maxDepth, m_fill - m_currRead);
-        if (maxLength >= m_maxDepth) {
+        int maxLength = Math.min(maxDepth, m_fill - currRead);
+        if (maxLength >= maxDepth) {
             emitAux(maxLength);
         }
     }
 
     public final void close() throws IOException {
-        while (m_fill > m_currRead) {
-            int maxLength = Math.min(m_maxDepth, m_fill - m_currRead);
+        while (m_fill > currRead) {
+            int maxLength = Math.min(maxDepth, m_fill - currRead);
 
             emitAux(maxLength);
         }
@@ -68,13 +68,13 @@ public class PhraseEmitter {
             if (i > 0) {
                 m_builder.append(" ");
             }
-            m_builder.append(get(i + m_currRead));
+            m_builder.append(get(i + currRead));
             if (i >= minSize) {
                 emitToConsumer(m_builder.toString());
             }
         }
         // right place for this?
-        m_currRead++;
+        currRead++;
     }
 
     protected void emitToConsumer(final String s) throws IOException {
@@ -82,11 +82,11 @@ public class PhraseEmitter {
     }
 
     protected final String get(final int i) {
-        return m_buffer[i % m_maxDepth];
+        return m_buffer[i % maxDepth];
     }
 
     protected void add(final String tok) {
-        m_buffer[m_fill % m_maxDepth] = tok;
+        m_buffer[m_fill % maxDepth] = tok;
         m_fill++;
     }
 }

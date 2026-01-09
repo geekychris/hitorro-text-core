@@ -32,8 +32,8 @@ import com.hitorro.util.urlparser.UrlCursor;
  * template use File | Settings | File Templates.
  */
 class ODPFarmCommand extends FarmCommand<ODPFetchElement, ODPFetchElement, Object> {
-    private ThreadLocal<HTMLPageFetcher> m_fetcherTL = new ThreadLocal<HTMLPageFetcher>();
-    private ThreadLocal<UrlCursor> m_urlCursor = new ThreadLocal<UrlCursor>();
+    private ThreadLocal<HTMLPageFetcher> fetcherTL = new ThreadLocal<HTMLPageFetcher>();
+    private ThreadLocal<UrlCursor> urlCursor = new ThreadLocal<UrlCursor>();
 
     public ODPFetchElement apply(ODPFetchElement inElement) {
         HTMLPageFetcher fetcher = getFetcher();
@@ -64,22 +64,22 @@ class ODPFarmCommand extends FarmCommand<ODPFetchElement, ODPFetchElement, Objec
     }
 
     private UrlCursor getCursor() {
-        UrlCursor c = m_urlCursor.get();
+        UrlCursor c = urlCursor.get();
         if (c == null) {
             c = new UrlCursor();
-            m_urlCursor.set(c);
+            urlCursor.set(c);
         }
 
         return c;
     }
 
     private HTMLPageFetcher getFetcher() {
-        HTMLPageFetcher f = m_fetcherTL.get();
+        HTMLPageFetcher f = fetcherTL.get();
 
         if (f == null) {
             f = new HTMLPageFetcher();
             f.setHttpTimeout(1000);
-            m_fetcherTL.set(f);
+            fetcherTL.set(f);
         }
         return f;
     }

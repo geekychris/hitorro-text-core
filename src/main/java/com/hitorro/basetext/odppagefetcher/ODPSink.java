@@ -41,7 +41,7 @@ import java.io.IOException;
  *
  */
 public class ODPSink implements Sink<ODPFetchElement> {
-    private int m_counterSuccess = 0;
+    private int counterSuccess = 0;
     private int m_fails = 0;
     private Timer m_timer = new Timer();
     private StringBuilder m_builder = new StringBuilder();
@@ -90,13 +90,13 @@ public class ODPSink implements Sink<ODPFetchElement> {
 
     public void accept(ODPFetchElement e) {
         if (e.m_page != null && e.m_page.getSource() != null) {
-            m_counterSuccess++;
-            if (m_counterSuccess % 1000 == 0) {
+            counterSuccess++;
+            if (counterSuccess % 1000 == 0) {
                 m_timer.stop();
                 long time = m_timer.getTime();
 
                 m_timer.reset();
-                Console.println("wrote %s avg time %s, failures %s", m_counterSuccess, time / 1000, m_fails);
+                Console.println("wrote %s avg time %s, failures %s", counterSuccess, time / 1000, m_fails);
 
 
             }

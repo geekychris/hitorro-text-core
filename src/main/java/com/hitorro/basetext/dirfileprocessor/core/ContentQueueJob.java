@@ -29,11 +29,11 @@ import java.io.File;
 /**
  */
 public class ContentQueueJob {
-    private TextFilter m_textFilter = null;
+    private TextFilter textFilter = null;
     private File m_file = null;
 
     public ContentQueueJob(File file) {
-        m_textFilter = FilterFactory.getFactory().getFilterByFileName(file);
+        textFilter = FilterFactory.getFactory().getFilterByFileName(file);
         m_file = file;
 
     }

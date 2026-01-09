@@ -27,7 +27,7 @@ import com.hitorro.basetext.dfindex.DFIndex;
  */
 public abstract class TermMeasureFunction {
     protected DFIndex m_dfIndex;
-    protected double m_corpusSize;
+    protected double corpusSize;
 
     public boolean getNeedsDFIndex() {
         return false;
@@ -37,7 +37,7 @@ public abstract class TermMeasureFunction {
 
         m_dfIndex = index;
         if (index != null) {
-            m_corpusSize = m_dfIndex.getDocFrequency();
+            corpusSize = m_dfIndex.getDocFrequency();
         }
     }
 

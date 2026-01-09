@@ -39,7 +39,7 @@ import java.util.*;
 
 public class ModelBuilderLoaderCallback implements LoaderCallback {
     private static final String Extensions[] = {"txt", "html", "htm"};
-    private static final HashSet m_extensionMap = MapUtil.makeHashSet(Extensions);
+    private static final HashSet extensionMap = MapUtil.makeHashSet(Extensions);
     private HashToIdAllocatingMap m_idMap = new HashToIdAllocatingMap(true);
     private List<ClassifierDoc> m_docs = new ArrayList<ClassifierDoc>();
     private List<GenericKeyValue<SparseVector, String>> m_sv =
@@ -50,7 +50,7 @@ public class ModelBuilderLoaderCallback implements LoaderCallback {
 
         if (!StringUtil.nullOrEmptyString(ext)) {
             ext = ext.toLowerCase();
-            if (m_extensionMap.contains(ext)) {
+            if (extensionMap.contains(ext)) {
                 ClassifierDoc cd = new ClassifierDoc(f, category);
                 m_docs.add(cd);
 

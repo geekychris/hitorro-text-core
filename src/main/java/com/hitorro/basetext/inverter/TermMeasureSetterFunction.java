@@ -40,7 +40,7 @@ public class TermMeasureSetterFunction extends TermMeasureFunction {
 
     public boolean compute(TermTuple tt, TermTupleSet set) {
 
-        tt.m_termMeasure = value;
+        tt.termMeasure = value;
         return true;
     }
 }

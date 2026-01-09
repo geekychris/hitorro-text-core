@@ -28,8 +28,8 @@ import com.hitorro.util.core.Log;
 public class WinnowingHashWriter implements HashWriter {
     int m_initialSize;
     int m_hash[];
-    int m_currPtr = 0;
-    int m_windowSize = 11;
+    int currPtr = 0;
+    int windowSize = 11;
     int hashCount = 0;
     private HashWriter m_writer;
 
@@ -37,7 +37,7 @@ public class WinnowingHashWriter implements HashWriter {
         m_writer = writer;
         m_initialSize = initialSize;
         m_hash = new int[initialSize];
-        m_windowSize = windowSize;
+        this.windowSize = windowSize;
     }
 
     public boolean close() {
@@ -62,8 +62,8 @@ public class WinnowingHashWriter implements HashWriter {
         int i;
         int j;
         int temp_pos;
-        for (i = 0; i < m_currPtr - m_windowSize + 1; i++) {
-            for (j = 0; j < m_windowSize; j++) {
+        for (i = 0; i < currPtr - windowSize + 1; i++) {
+            for (j = 0; j < windowSize; j++) {
                 temp_pos = i + j;
                 if (m_hash[temp_pos] <= min) {
 
@@ -85,8 +85,8 @@ public class WinnowingHashWriter implements HashWriter {
         int i;
         int j;
         int temp_pos;
-        for (i = 0; i < m_currPtr - m_windowSize + 1; i++) {
-            int tempWindowSize = m_windowSize + i;
+        for (i = 0; i < currPtr - windowSize + 1; i++) {
+            int tempWindowSize = windowSize + i;
             for (j = prev_pos; j < tempWindowSize; j++) {
                 temp_pos = j;
                 if (m_hash[temp_pos] <= min) {
@@ -107,11 +107,11 @@ public class WinnowingHashWriter implements HashWriter {
 
     public boolean write(int hash, int position) {
 
-        if (m_currPtr >= m_initialSize) {
+        if (currPtr >= m_initialSize) {
             return false;
         }
-        m_hash[m_currPtr] = hash;
-        m_currPtr++;
+        m_hash[currPtr] = hash;
+        currPtr++;
         return true;
     }
 }

@@ -30,17 +30,17 @@ import java.io.FilenameFilter;
 /**
  */
 public class DirectoryCrawler implements Crawler {
-    private File m_rootDirectory = null;
+    private File rootDirectory = null;
     private FilenameFilter m_filter = null;
 
     public DirectoryCrawler(File directory, FilenameFilter filter) {
-        m_rootDirectory = directory;
+        rootDirectory = directory;
         m_filter = filter;
     }
 
     public void crawl(ContentQueue queue) {
-        if (m_rootDirectory.isDirectory()) {
-            crawl(queue, m_rootDirectory);
+        if (rootDirectory.isDirectory()) {
+            crawl(queue, rootDirectory);
         } else {
             // not a directory
         }
