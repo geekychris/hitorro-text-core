@@ -48,12 +48,18 @@ public class NERMarkup {
         // PositionIncrementAttribute pia = ts.getAttribute(PositionIncrementAttribute.class);
         sb.setLength(0);
 
+        // CRITICAL: Must call reset() before incrementToken() in Lucene 9.x
+        ts.reset();
+        
         while (ts.incrementToken()) {
             if (sb.length() > 0) {
                 sb.append(" ");
             }
             sb.append(termAttribute.toString());
         }
+        
+        // CRITICAL: Must call end() before close() in Lucene 9.x
+        ts.end();
         ts.close();
         return sb.toString();
     }

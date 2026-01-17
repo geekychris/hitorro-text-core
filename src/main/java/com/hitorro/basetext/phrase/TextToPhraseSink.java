@@ -112,9 +112,16 @@ public class TextToPhraseSink implements Sink<String> {
         m_reader.set(text);
         TokenStream ts = analyzer.tokenStream("", m_reader);
         CharTermAttribute attr = ts.getAttribute(CharTermAttribute.class);
+        
+        // CRITICAL: Must call reset() before incrementToken() in Lucene 9.x
+        ts.reset();
+        
         while (ts.incrementToken()) {
             m_emitter.addToken(new String(attr.buffer(), 0, attr.length()));
         }
+        
+        // CRITICAL: Must call end() before close() in Lucene 9.x
+        ts.end();
         ts.close();
         m_emitter.close();
         count++;

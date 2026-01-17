@@ -43,7 +43,7 @@ public class FrequencyTokenizerCollector {
      */
     public int collect(TokenStream ts) throws IOException {
         int count = 0;
-        //XXX RESET???
+        // CRITICAL: Must call reset() before incrementToken() in Lucene 9.x
         ts.reset();
         CharTermAttribute termAttribute = ts.getAttribute(CharTermAttribute.class);
         m_map.clear();
@@ -57,6 +57,8 @@ public class FrequencyTokenizerCollector {
                 m_map.increment(term);
             }
         }
+        // CRITICAL: Must call end() before close() in Lucene 9.x
+        ts.end();
         ts.close();
         return count;
     }

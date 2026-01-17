@@ -91,11 +91,12 @@ public class NamedEntityFilter extends TokenFilter {
      * consume tokens from the upstream tokenizer and buffer them in a StringBuilder whose contents will get passed to
      * opennlp.
      */
-    protected boolean fillSpans() {
+    protected final boolean fillSpans() {
         posPool = PartOfSpeechSingletonMapper.singleton.get(language);
         try (PartOfSpeech pos = posPool.get()) {
             finders = pos.getAllNameFinders();
-
+            // Note: Do NOT call input.reset() here - it's already been reset by the caller
+            // The reset() contract in Lucene 9.x requires that reset() is called before incrementToken()
             if (!input.incrementToken()) {
                 return false;
             }
@@ -138,7 +139,7 @@ public class NamedEntityFilter extends TokenFilter {
         return false;
     }
 
-    public boolean incrementToken() throws IOException {
+    public final boolean incrementToken() throws IOException {
         // if there's nothing in the queue.
         if (tokenQueue.peek() == null) {
             // no spans or spans consumed
@@ -193,6 +194,12 @@ public class NamedEntityFilter extends TokenFilter {
     }
 
     @Override
+    public void reset() throws IOException {
+        super.reset();
+        resetState();
+    }
+
+    @Override
     public void close() throws IOException {
         super.close();
         resetState();
@@ -207,5 +214,11 @@ public class NamedEntityFilter extends TokenFilter {
     private void resetState() {
         this.spanOffset = 0;
         this.spans = null;
+        this.text = null;
+        this.tokens = null;
+        this.foundNames = null;
+        this.tokenTypes = null;
+        this.baseOffset = 0;
+        this.tokenQueue.clear();
     }
 }
