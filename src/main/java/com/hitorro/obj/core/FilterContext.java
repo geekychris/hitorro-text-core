@@ -24,9 +24,7 @@ package com.hitorro.obj.core;
 import com.hitorro.basetext.dfindex.BaseDFIndexInterface;
 import com.hitorro.basetext.phrase.FPPhraseContext;
 
-/**
- *
- */
+
 public class FilterContext {
     public BaseDFIndexInterface baseIndex;
     public FPPhraseContext fpPhraseContext;

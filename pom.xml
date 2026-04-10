@@ -124,6 +124,11 @@
         </dependency>
         <dependency>
             <groupId>com.hitorro</groupId>
+            <artifactId>hitorro-jsontypesystem</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hitorro</groupId>
             <artifactId>hitorro-base</artifactId>
             <version>3.0.1</version>
         </dependency>

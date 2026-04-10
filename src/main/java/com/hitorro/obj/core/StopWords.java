@@ -32,9 +32,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- *
- */
+
 public class StopWords {
     public static final BasefileProperty root = new BasefileProperty("analysis.stopwords.rootdir", "", "file://${ht_data}/stopwords/");
     private BaseFile langDir;

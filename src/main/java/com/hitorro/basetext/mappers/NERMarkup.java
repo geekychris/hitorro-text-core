@@ -29,9 +29,7 @@ import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 
 import java.io.IOException;
 
-/**
- *
- */
+
 public class NERMarkup {
     private GenericAnalyzer ga;
     private ResetableStringReader rsr = new ResetableStringReader("");

@@ -42,9 +42,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- */
+
 @HTTest(runlevel = RunLevel.Full,
         email = "chris@hitorro.com",
         description = "Test sentence segmentation")

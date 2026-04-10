@@ -29,9 +29,7 @@ import org.apache.lucene.analysis.tokenattributes.PackedTokenAttributeImpl;
 
 import java.io.IOException;
 
-/**
- *
- */
+
 public class Phrase2 extends TokenFilter {
     private FPPhraseContext emitter;
     private CharTermAttribute termAtt;

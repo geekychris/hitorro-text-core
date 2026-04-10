@@ -23,9 +23,7 @@ package com.hitorro.basetext.dfindex;
 
 import com.hitorro.util.core.map.FPHashBaseMapInterface;
 
-/**
- *
- */
+
 public class FPHashDict implements BaseDFIndexInterface {
     private FPHashBaseMapInterface map;
     private int layer;

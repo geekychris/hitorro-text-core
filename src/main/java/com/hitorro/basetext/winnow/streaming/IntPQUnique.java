@@ -21,9 +21,7 @@
  */
 package com.hitorro.basetext.winnow.streaming;
 
-/**
- *
- */
+
 public class IntPQUnique {
     private int[] heap;
 

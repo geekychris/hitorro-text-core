@@ -28,9 +28,7 @@ import com.hitorro.language.IsoLanguage;
 import com.hitorro.util.core.iterator.JsonValueSource;
 import com.hitorro.util.core.iterator.mappers.BaseMapper;
 
-/**
- *
- */
+
 public class SentEnhancer extends BaseMapper<JsonValueSource, JsonValueSource> {
     private ExtractPOS epos;
     private Json2Sentences sents;

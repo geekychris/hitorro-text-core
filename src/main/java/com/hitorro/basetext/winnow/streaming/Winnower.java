@@ -21,9 +21,7 @@
  */
 package com.hitorro.basetext.winnow.streaming;
 
-/**
- *
- */
+
 public class Winnower extends SetHash {
     private int winnowSize;
     private int lastEmmited = 0;

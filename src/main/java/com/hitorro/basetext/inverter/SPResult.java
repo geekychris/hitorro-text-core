@@ -24,9 +24,7 @@ package com.hitorro.basetext.inverter;
 import com.hitorro.util.core.math.SparseVector;
 import com.hitorro.util.core.math.SparseVectorCosineDistance;
 
-/**
- *
- */
+
 public class SPResult implements Comparable<SPResult> {
     public static final SparseVectorCosineDistance distMeasure = new SparseVectorCosineDistance();
     public double distance;

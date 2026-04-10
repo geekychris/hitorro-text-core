@@ -24,9 +24,7 @@ package com.hitorro.basetext.inverter.classifier;
 import com.hitorro.basetext.inverter.TermTuple;
 import com.hitorro.util.core.longword.opers.LongOperator;
 
-/**
- *
- */
+
 public abstract class LogicalOpClassTest<E extends TermTuple> {
 
     protected LongOperator oper;

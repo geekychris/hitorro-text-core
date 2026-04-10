@@ -25,9 +25,7 @@ import com.hitorro.util.core.string.Fmt;
 import org.apache.lucene.search.FieldComparator;
 import org.apache.lucene.search.FieldDoc;
 
-/**
- *
- */
+
 public class ExtendedFieldDoc extends FieldDoc {
     public ResultPayload payload;
 

@@ -34,9 +34,7 @@ import opennlp.tools.cmdline.parser.ParserTool;
 import opennlp.tools.doccat.DoccatModel;
 import opennlp.tools.parser.Parse;
 
-/**
- *
- */
+
 public class AnswerClassifierMapper extends BaseMapper<JsonValueSource, String> {
     private static String[][] bestMatch = {{"posts.subject_class_sents", "posts.subject_sents", "Q"},
             {"posts.detail_class_sents", "posts.detail_sents", "Q"}};

@@ -28,9 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- *
- */
+
 public class LogicalOpClassifyingTermCollection<E extends TermTuple> extends TermCollection<E> {
     private List<LogicalOpClassTest> tests = new ArrayList();
 

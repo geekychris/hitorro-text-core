@@ -31,9 +31,7 @@ import com.hitorro.util.core.iterator.mappers.BaseMapper;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- */
+
 public class Text2Sentences extends BaseMapper<String, List<String>> {
     private IsoLanguage lang;
     private String fields[];

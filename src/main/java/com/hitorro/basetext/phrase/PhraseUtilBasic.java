@@ -32,7 +32,7 @@ import com.hitorro.util.core.iterator.mappers.BaseMapper;
 import com.hitorro.util.core.iterator.mappers.DummyBaseMapper;
 import com.hitorro.util.core.iterator.sinks.Sink;
 import com.hitorro.util.io.largedata.iterator.BaseFileSelectTreeController;
-import com.hitorro.util.io.resourcecache.basefile.BaseFileResourcePropertyKey;
+// BaseFileResourcePropertyKey removed during cleanup
 import com.hitorro.util.typesystem.HTSerializable;
 import com.hitorro.util.typesystem.HTSerializableUtil;
 
@@ -52,16 +52,10 @@ public class PhraseUtilBasic {
 	public static final String PhraseFreq = "phrases_alphaNumeric.phraseFreq";
 	public static final String DictFile = "phrases.dict";
 
-	public static final BaseFileResourcePropertyKey AlphaSortedPhraseListKey =
-			new BaseFileResourcePropertyKey(PhraseUtilBasic.ResourceName, PhraseUtilBasic.VersionQuery, PhraseUtilBasic.AlphaNumeric,
-					PhraseUtilBasic.AlphaNumeric, "");
+	// AlphaSortedPhraseListKey removed during resource cache cleanup
 
 	public static final boolean generatePhraseIndexFromPhrasesInResourceCache(int min, int max, String desc, String query, boolean writeDumpText) throws IOException {
-		BaseFile f = AlphaSortedPhraseListKey.apply();
-		if (BaseFile.notNullAndExists(f)) {
-			PhraseIndex.createIndexInResourceCache(f, min, max, desc, query, writeDumpText);
-			return true;
-		}
+		// BaseFileResourcePropertyKey removed during cleanup - resource cache no longer available
 		return false;
 	}
 

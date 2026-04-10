@@ -21,7 +21,7 @@
  */
 package com.hitorro.basetext.commands;
 
-import com.hitorro.jsontypesystem.JVS;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.hitorro.util.commandandcontrol.Command;
 import com.hitorro.util.commandandcontrol.CommandSession;
 import com.hitorro.util.commandandcontrol.Response;
@@ -44,7 +44,7 @@ public class FetchPageCommand extends Command {
     @CommandArgument(required = true)
     private StringProperty Url = new StringProperty("url", "Reason given for exit", null);
 
-    public boolean execute(String rawValue, JVS args, Response response, CommandSession session) throws Exception {
+    public boolean execute(String rawValue, JsonNode args, Response response, CommandSession session) throws Exception {
         HTMLPageFetcher fetcher = new HTMLPageFetcher();
         String url = Url.apply(args);
         HTMLPage page = fetcher.fetchPage(HTMLEncoder.decodeHtml(url));

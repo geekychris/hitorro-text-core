@@ -21,8 +21,6 @@
  */
 package com.hitorro.basetext.classifier;
 
-/**
- *
- */
+
 public class CollectionMapper {
 }

@@ -21,9 +21,7 @@
  */
 package com.hitorro.basetext.indexer.collector;
 
-/**
- *
- */
+
 public class Constants {
     public static final String PartitionDate = "cd";
     public static final String PublishDate = "pd";

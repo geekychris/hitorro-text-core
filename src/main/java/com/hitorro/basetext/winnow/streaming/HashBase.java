@@ -24,9 +24,7 @@ package com.hitorro.basetext.winnow.streaming;
 import java.io.IOException;
 import java.io.Reader;
 
-/**
- *
- */
+
 public class HashBase {
     private int buffSize = 1024;
     private int[] buff = new int[buffSize];

@@ -27,7 +27,7 @@ import com.hitorro.basetext.inverter.DocumentInverter;
 import com.hitorro.basetext.inverter.TFIDFTermMeasureFunction;
 import com.hitorro.basetext.inverter.TermTuple;
 import com.hitorro.basetext.inverter.TermTupleSet;
-import com.hitorro.jsontypesystem.JVS;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.hitorro.language.Iso639Table;
 import com.hitorro.language.IsoLanguage;
 import com.hitorro.util.commandandcontrol.ano.CommandArgument;
@@ -60,7 +60,7 @@ public class InvertUrlContent extends com.hitorro.util.commandandcontrol.Command
                     @RespColumn(name = "Measure", lName = "measure")})
     private com.hitorro.util.commandandcontrol.ResponseShape shape = new com.hitorro.util.commandandcontrol.ResponseShape();
 
-    public boolean execute(String rawValue, JVS args, com.hitorro.util.commandandcontrol.Response response, com.hitorro.util.commandandcontrol.CommandSession session) throws Exception {
+    public boolean execute(String rawValue, JsonNode args, com.hitorro.util.commandandcontrol.Response response, com.hitorro.util.commandandcontrol.CommandSession session) throws Exception {
         HTMLPageFetcher fetcher = new HTMLPageFetcher();
         fetcher.setHttpTimeout(1000);
         String url = Url.apply(args);

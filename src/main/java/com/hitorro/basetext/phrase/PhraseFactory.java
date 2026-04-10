@@ -23,9 +23,7 @@ package com.hitorro.basetext.phrase;
 
 import com.hitorro.util.io.largedata.BaseFileAccessingObjectFactory;
 
-/**
- *
- */
+
 public class PhraseFactory extends BaseFileAccessingObjectFactory<PhraseElement> {
     public PhraseFactory() {
         setBaseFileSinkMapper(PhraseUtilBasic.bf2phraselementsink);

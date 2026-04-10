@@ -24,7 +24,7 @@ package com.hitorro.basetext.phrase;
 import com.hitorro.util.core.Log;
 import com.hitorro.util.core.events.cache.SingletonCache;
 import com.hitorro.util.core.iterator.mappers.BaseMapper;
-import com.hitorro.util.io.resourcecache.file.FileResourcePropertyKey;
+import com.hitorro.util.json.keys.FileProperty;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,9 +32,9 @@ import java.io.IOException;
 
 public class PhraseIndexSingletonCache extends BaseMapper<Object, PhraseIndex> {
     public static final String DFIndexSingletonCacheEventKey = "PhraseIndexSingletonCache";
-    public static final FileResourcePropertyKey PropKey =
-            new FileResourcePropertyKey(PhraseIndex.ResourceName, PhraseIndex.VersionQuery, PhraseIndex.DictFile,
-                    PhraseIndex.DictFile, "", false);
+    // FileResourcePropertyKey removed during cleanup
+    public static final FileProperty PropKey =
+            new FileProperty(PhraseIndex.DictFile, "Phrase index dict file");
 
     private static final SingletonCache<PhraseIndex> s_singleton = new SingletonCache<PhraseIndex>(DFIndexSingletonCacheEventKey, new PhraseIndexSingletonCache());
 

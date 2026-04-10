@@ -23,9 +23,7 @@ package com.hitorro.basetext.indexer.collector.consuming;
 
 import com.hitorro.basetext.indexer.collector.meta.ExtendedFieldDoc;
 
-/**
- *
- */
+
 public interface ResultConsumer {
     void consume(ExtendedFieldDoc[] docs, int max);
 }

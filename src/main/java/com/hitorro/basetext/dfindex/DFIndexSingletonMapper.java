@@ -25,9 +25,7 @@ import com.hitorro.util.core.Log;
 import com.hitorro.util.core.events.cache.Cache;
 import com.hitorro.util.core.events.cache.SingletonCache;
 import com.hitorro.util.core.iterator.mappers.BaseMapper;
-import com.hitorro.util.io.resourcecache.ResourceToPoll;
-import com.hitorro.util.io.resourcecache.basefile.BaseFileResourceCache;
-import com.hitorro.util.io.resourcecache.file.FileResourcePropertyKey;
+import com.hitorro.util.json.keys.FileProperty;
 
 import java.io.File;
 import java.io.IOException;
@@ -36,21 +34,14 @@ import java.io.IOException;
  */
 public class DFIndexSingletonMapper extends BaseMapper<Object, DFIndex> {
     public static final String DFIndexSingletonCacheEventKey = "DFIndexSingletonCache";
-    public static final FileResourcePropertyKey PropKey =
-            new FileResourcePropertyKey(DFIndex.ResourceName, DFIndex.VersionQuery, DFIndex.FileName,
-                    "index.dfindex", "", false);
+    // FileResourcePropertyKey removed during cleanup
+    public static final FileProperty PropKey =
+            new FileProperty("index.dfindex", "DF index file");
 
     private static final SingletonCache<DFIndex> singleton = new SingletonCache(true, true, "dfindex", new DFIndexSingletonMapper(), null);
 
     public DFIndexSingletonMapper() {
-        ResourceToPoll rtp = new ResourceToPoll(DFIndex.ResourceName, DFIndex.VersionQuery,
-                30, DFIndexSingletonCacheEventKey, Cache.FlushCache);
-
-        try {
-            BaseFileResourceCache.getCache().add(rtp);
-        } catch (IOException e) {
-            Log.util.fatal("Unable to put resource poll %s %e", e, e);
-        }
+        // BaseFileResourceCache removed during cleanup
     }
 
     public static final SingletonCache<DFIndex> getSingleton() {

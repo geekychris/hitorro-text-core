@@ -32,8 +32,7 @@ import com.hitorro.util.core.iterator.AbstractIterator;
 import com.hitorro.util.core.params.HTProperties;
 import com.hitorro.util.core.string.StringUtil;
 import com.hitorro.util.io.FileUtil;
-import com.hitorro.util.io.resourcecache.basefile.BaseFileResourceCache;
-import com.hitorro.util.io.resourcecache.basefile.BaseFileResourceContext;
+// BaseFileResourceCache and BaseFileResourceContext removed during cleanup
 
 import java.io.*;
 import java.util.Date;
@@ -68,32 +67,8 @@ public class PhraseIndex extends BaseDFIndex {
     public static final boolean createIndexInResourceCache(BaseFile source, int minFreq,
                                                            int maxFreq, String desc,
                                                            String query, boolean writeTextDump) throws IOException {
-        AbstractIterator<PhraseElement> iterIn = PhraseUtilBasic.bf2phraseelementiter.apply(source);
-        AbstractIterator<PhraseElement> iter = iterIn.filter(new PhraseBetweenLogicalOperator(minFreq, maxFreq));
-        boolean wrote = false;
-        BaseFileResourceContext c = null;
-        try {
-            c = BaseFileResourceCache.getCache().getTempResourceContext(PhraseIndex.ResourceName,
-                    PhraseIndex.MajorVersion,
-                    PhraseIndex.MinorVersion,
-                    PhraseIndex.PatchVersion);
-
-            BaseFile dir = c.getPath();
-            PhraseIndex index = new PhraseIndex(0);
-            index.createIndex(iter, dir, writeTextDump, desc, query, minFreq, maxFreq);
-            wrote = true;
-        } finally {
-            if (wrote == true) {
-                c.commit();
-                return true;
-            } else {
-                c.rollback();
-            }
-
-        }
+        // BaseFileResourceCache removed during cleanup - resource cache no longer available
         return false;
-
-
     }
 
     public void setDetails(String description, String queryString) {

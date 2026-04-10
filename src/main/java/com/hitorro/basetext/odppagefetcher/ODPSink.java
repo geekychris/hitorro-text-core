@@ -37,9 +37,7 @@ import com.hitorro.util.typesystem.BaseSessionFactory;
 import java.io.File;
 import java.io.IOException;
 
-/**
- *
- */
+
 public class ODPSink implements Sink<ODPFetchElement> {
     private int counterSuccess = 0;
     private int m_fails = 0;

@@ -30,9 +30,7 @@ import com.hitorro.util.testframework.EnhancedTestCase;
 import java.io.File;
 import java.io.IOException;
 
-/**
- *
- */
+
 //@HTTest(runlevel = RunLevel.Smoke,
 //        email = "chris@hitorro.com",
 //        description = "Winnowing hash function tests")

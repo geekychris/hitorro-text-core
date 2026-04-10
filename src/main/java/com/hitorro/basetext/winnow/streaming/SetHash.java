@@ -21,9 +21,7 @@
  */
 package com.hitorro.basetext.winnow.streaming;
 
-/**
- *
- */
+
 public abstract class SetHash {
     public abstract void setHash(int hash);
 

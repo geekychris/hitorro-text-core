@@ -24,9 +24,7 @@ package com.hitorro.basetext.indexer.collector.sorted;
 import com.hitorro.basetext.indexer.collector.meta.ResultPayload;
 import com.hitorro.util.core.string.Fmt;
 
-/**
- *
- */
+
 public class Entry {
     public int slot;
     public int ephemeralId;

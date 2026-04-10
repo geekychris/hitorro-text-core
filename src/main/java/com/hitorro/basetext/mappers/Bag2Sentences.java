@@ -33,9 +33,7 @@ import com.hitorro.util.typesystem.Bag;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- */
+
 public class Bag2Sentences extends BaseMapper<Bag, List<String>> {
     private IsoLanguage lang;
     private String fields[];

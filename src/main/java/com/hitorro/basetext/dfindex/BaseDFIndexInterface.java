@@ -21,9 +21,7 @@
  */
 package com.hitorro.basetext.dfindex;
 
-/**
- *
- */
+
 public interface BaseDFIndexInterface {
     int hasPhrase(long fp);
 

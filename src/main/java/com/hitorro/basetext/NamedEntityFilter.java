@@ -41,9 +41,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
- *
- */
+
 public class NamedEntityFilter extends TokenFilter {
     public static final String NE_PREFIX = "NE_";
 
@@ -109,8 +107,12 @@ public class NamedEntityFilter extends TokenFilter {
             tokens = Span.spansToStrings(spans, text);
             foundNames = new Span[finders.length][];
             for (int i = 0; i < finders.length; i++) {
-                finders[i].setToks(tokens);
-                foundNames[i] = finders[i].getSpans();
+                if (finders[i] != null) {
+                    finders[i].setToks(tokens);
+                    foundNames[i] = finders[i].getSpans();
+                } else {
+                    foundNames[i] = new Span[0];
+                }
             }
 
             //TODO: make this a bitset that is tokens.length * finders.length

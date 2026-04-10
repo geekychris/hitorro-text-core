@@ -29,9 +29,7 @@ import com.hitorro.util.typesystem.TypeManager;
 
 import java.util.ArrayList;
 
-/**
- *
- */
+
 public class TypeFieldsAnalyzerCache extends BaseMapper<TypeIntf, AnalyzerPerLanguage> {
     public static final String EventName = "TypeFieldsCache";
     public static final HashCache<TypeIntf, AnalyzerPerLanguage> query = new HashCache(EventName, new AnalyzerPerLanguage(new ArrayList(), GenericAnalyzer.Mode.Query), new TypeFieldsAnalyzerCache(GenericAnalyzer.Mode.Query));

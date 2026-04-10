@@ -32,9 +32,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- *
- */
+
 public class AnalyzerPerLanguage {
     private List<TypeFieldIntf> fields;
     private GenericAnalyzer.Mode mode;

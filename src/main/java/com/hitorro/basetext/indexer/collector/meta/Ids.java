@@ -21,9 +21,7 @@
  */
 package com.hitorro.basetext.indexer.collector.meta;
 
-/**
- *
- */
+
 public enum Ids {
     Guid("id", 8), Source("sid", 8), Hash("hid", 8);
 

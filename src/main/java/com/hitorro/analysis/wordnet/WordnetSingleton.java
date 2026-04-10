@@ -28,9 +28,7 @@ import com.hitorro.util.json.keys.FileProperty;
 
 import java.io.IOException;
 
-/**
- *
- */
+
 public class WordnetSingleton extends BaseMapper<Object, WordNetContext> {
     public static String EventName = "wordnetsingleton";
 

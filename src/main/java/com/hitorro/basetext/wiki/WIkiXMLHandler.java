@@ -28,9 +28,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- *
- */
+
 public class WIkiXMLHandler extends DefaultHandler {
     /**
      * When you see the end tag, print it out and decrease indentation level by 2.

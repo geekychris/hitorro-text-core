@@ -24,9 +24,7 @@ package com.hitorro.basetext;
 import com.hitorro.language.IsoLanguage;
 import org.apache.lucene.analysis.TokenStream;
 
-/**
- *
- */
+
 public class NamedEntityMarkupFilter extends NamedEntityFilter {
     private StringBuilder sb = new StringBuilder();
 

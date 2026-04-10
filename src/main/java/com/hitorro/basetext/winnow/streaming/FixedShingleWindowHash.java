@@ -23,9 +23,7 @@ package com.hitorro.basetext.winnow.streaming;
 
 import com.hitorro.util.core.Console;
 
-/**
- *
- */
+
 public class FixedShingleWindowHash extends SetHash {
     int counter = 0;
     private IntPriorityQueue queue;

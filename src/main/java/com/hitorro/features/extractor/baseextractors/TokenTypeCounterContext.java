@@ -37,9 +37,7 @@ import org.apache.lucene.analysis.tokenattributes.TypeAttribute;
 
 import java.io.IOException;
 
-/**
- *
- */
+
 public class TokenTypeCounterContext implements ResetableContext<TokenTypeCounterContext> {
     private GenericAnalyzer analyzer = new GenericAnalyzer("HTSTANDARD", Iso639Table.english, GenericAnalyzer.Mode.Index);
     private ResetableStringReader reader = new ResetableStringReader(null);

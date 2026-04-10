@@ -25,9 +25,7 @@ import com.hitorro.language.IsoLanguage;
 import com.hitorro.util.typesystem.HTAnalyzerFactory;
 import org.apache.lucene.analysis.Analyzer;
 
-/**
- *
- */
+
 public class GenericaAnalyzerFactory extends HTAnalyzerFactory {
     public Analyzer get(String s, IsoLanguage language, GenericAnalyzer.Mode mode) {
         return new GenericAnalyzer(s, language, mode);

@@ -21,9 +21,7 @@
  */
 package com.hitorro.basetext.classifier;
 
-/**
- *
- */
+
 public abstract class BaseClassifierMapper {
 
 

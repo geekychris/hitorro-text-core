@@ -21,9 +21,7 @@
  */
 package com.hitorro.basetext.winnow.streaming;
 
-/**
- *
- */
+
 public class ShingleUtil {
     /**
      * Calculates the intersection count between two arrays or ascending sorted integers.

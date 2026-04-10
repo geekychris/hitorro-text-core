@@ -34,9 +34,7 @@ import com.hitorro.util.typesystem.valuesource.ValueSourceForClass;
 
 import java.io.IOException;
 
-/**
- *
- */
+
 public class InverterResetableContext implements ResetableContext<InverterResetableContext> {
     private TermTupleSetGroup group;
     private String fields[];

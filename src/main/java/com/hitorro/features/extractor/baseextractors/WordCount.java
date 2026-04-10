@@ -35,9 +35,7 @@ import com.hitorro.util.typesystem.valuesource.ValueSourceForClass;
 
 import java.util.HashMap;
 
-/**
- *
- */
+
 public class WordCount extends FeatureExtractor<ValueSourceForClass> {
     public static final StringProperty SectionKey = new StringProperty("extractor.field", "", Section.Body.getSection());
 
