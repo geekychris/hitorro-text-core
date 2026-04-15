@@ -44,7 +44,7 @@ public class MoneyToAliasFilter extends TokenFilter {
 
     }
 
-    public static final boolean isMoneyOrNumber(char buff[], int length) {
+    public static boolean isMoneyOrNumber(char buff[], int length) {
         boolean haveDigit = false;
         char c;
         boolean looksLikeMoney = false;

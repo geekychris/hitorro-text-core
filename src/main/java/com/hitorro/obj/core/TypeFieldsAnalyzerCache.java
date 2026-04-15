@@ -32,8 +32,8 @@ import java.util.ArrayList;
 
 public class TypeFieldsAnalyzerCache extends BaseMapper<TypeIntf, AnalyzerPerLanguage> {
     public static final String EventName = "TypeFieldsCache";
-    public static final HashCache<TypeIntf, AnalyzerPerLanguage> query = new HashCache(EventName, new AnalyzerPerLanguage(new ArrayList(), GenericAnalyzer.Mode.Query), new TypeFieldsAnalyzerCache(GenericAnalyzer.Mode.Query));
-    public static final HashCache<TypeIntf, AnalyzerPerLanguage> index = new HashCache(EventName, new AnalyzerPerLanguage(new ArrayList(), GenericAnalyzer.Mode.Index), new TypeFieldsAnalyzerCache(GenericAnalyzer.Mode.Index));
+    public static HashCache<TypeIntf, AnalyzerPerLanguage> query = new HashCache(EventName, new AnalyzerPerLanguage(new ArrayList(), GenericAnalyzer.Mode.Query), new TypeFieldsAnalyzerCache(GenericAnalyzer.Mode.Query));
+    public static HashCache<TypeIntf, AnalyzerPerLanguage> index = new HashCache(EventName, new AnalyzerPerLanguage(new ArrayList(), GenericAnalyzer.Mode.Index), new TypeFieldsAnalyzerCache(GenericAnalyzer.Mode.Index));
 
 
     TypeManager m_tm = TypeManager.getTypeManager();

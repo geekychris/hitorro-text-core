@@ -241,7 +241,7 @@ class HTCLI {
         return toolLookupMap;
     }
 
-    public static int exec(String[] args, Errors errors) {
+    public static final int exec(String[] args, Errors errors) {
 
         if (args.length == 0) {
             return 0;

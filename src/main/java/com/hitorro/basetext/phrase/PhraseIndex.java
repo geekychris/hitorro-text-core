@@ -64,7 +64,7 @@ public class PhraseIndex extends BaseDFIndex {
         super(layer);
     }
 
-    public static final boolean createIndexInResourceCache(BaseFile source, int minFreq,
+    public static boolean createIndexInResourceCache(BaseFile source, int minFreq,
                                                            int maxFreq, String desc,
                                                            String query, boolean writeTextDump) throws IOException {
         // BaseFileResourceCache removed during cleanup - resource cache no longer available

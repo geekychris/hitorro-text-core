@@ -25,7 +25,7 @@ import com.hitorro.util.core.iterator.LikeRowMerger;
 
 
 public class PhraseMerger implements LikeRowMerger<PhraseElement> {
-    public static final PhraseMerger pm = new PhraseMerger();
+    public static PhraseMerger pm = new PhraseMerger();
 
     public PhraseElement apply(PhraseElement old, PhraseElement newval) {
         old.setFrequency(old.getFrequency() + newval.getFrequency());

@@ -33,7 +33,7 @@ import java.io.IOException;
 public class PhraseIndexSingletonCache extends BaseMapper<Object, PhraseIndex> {
     public static final String DFIndexSingletonCacheEventKey = "PhraseIndexSingletonCache";
     // FileResourcePropertyKey removed during cleanup
-    public static final FileProperty PropKey =
+    public static FileProperty PropKey =
             new FileProperty(PhraseIndex.DictFile, "Phrase index dict file");
 
     private static final SingletonCache<PhraseIndex> s_singleton = new SingletonCache<PhraseIndex>(DFIndexSingletonCacheEventKey, new PhraseIndexSingletonCache());
@@ -41,7 +41,7 @@ public class PhraseIndexSingletonCache extends BaseMapper<Object, PhraseIndex> {
     public PhraseIndexSingletonCache() {
     }
 
-    public static final SingletonCache<PhraseIndex> getSingleton() {
+    public static SingletonCache<PhraseIndex> getSingleton() {
         return s_singleton;
     }
 

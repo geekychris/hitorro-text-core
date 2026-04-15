@@ -30,7 +30,7 @@ import java.io.IOException;
 
 
 public class WordnetSingleton extends BaseMapper<Object, WordNetContext> {
-    public static String EventName = "wordnetsingleton";
+    public static final String EventName = "wordnetsingleton";
 
     public static FileProperty WNLocation = new FileProperty("wordnet.dir", "Path of the wordnet repo", "${ht_data}/WordNet-3.0/dict/");
 

@@ -37,9 +37,9 @@ import java.util.HashMap;
 
 
 public class WordCount extends FeatureExtractor<ValueSourceForClass> {
-    public static final StringProperty SectionKey = new StringProperty("extractor.field", "", Section.Body.getSection());
+    public static StringProperty SectionKey = new StringProperty("extractor.field", "", Section.Body.getSection());
 
-    public static final StringProperty ComputeKey = new StringProperty("compute", "", Compute.UniqueWords.getCompute());
+    public static StringProperty ComputeKey = new StringProperty("compute", "", Compute.UniqueWords.getCompute());
     public static InverterResetableContext key = new InverterResetableContext(new String[]{"title", "body"}, "body");
 
     private Section section;

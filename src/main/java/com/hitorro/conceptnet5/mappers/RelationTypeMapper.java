@@ -31,7 +31,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class RelationTypeMapper extends BaseMapper<ResultSet, RelationType> {
-    public static String relationSql = "select id, name, description from conceptnet_relation";
+    public static final String relationSql = "select id, name, description from conceptnet_relation";
 
     public static RelationTypeMapper me = new RelationTypeMapper();
 

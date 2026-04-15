@@ -26,7 +26,7 @@ import com.hitorro.util.core.math.SparseVectorCosineDistance;
 
 
 public class SPResult implements Comparable<SPResult> {
-    public static final SparseVectorCosineDistance distMeasure = new SparseVectorCosineDistance();
+    public static SparseVectorCosineDistance distMeasure = new SparseVectorCosineDistance();
     public double distance;
     public SparseVector<TermTupleSet> l;
     public SparseVector<TermTupleSet> r;

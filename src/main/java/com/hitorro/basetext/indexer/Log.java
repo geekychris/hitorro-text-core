@@ -26,5 +26,5 @@ import com.hitorro.util.log.Logger;
 /**
  */
 public class Log {
-    public static final Logger indexer = Logger.getLogger("ht.index");
+    public static Logger indexer = Logger.getLogger("ht.index");
 }

@@ -48,7 +48,7 @@ import java.util.List;
 @CommandDef(command = "text.inverturl", description = "Fetch the content of the url and invert it")
 public class InvertUrlContent extends com.hitorro.util.commandandcontrol.Command {
     @CommandArgument(required = true)
-    public static final StringProperty Url = new StringProperty("url", "url to fetch", null);
+    public static StringProperty Url = new StringProperty("url", "url to fetch", null);
 
     @ResponseDefinition(command = "invertdocument",
             rowname = "section",

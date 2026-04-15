@@ -35,7 +35,7 @@ import java.io.IOException;
 public class DFIndexSingletonMapper extends BaseMapper<Object, DFIndex> {
     public static final String DFIndexSingletonCacheEventKey = "DFIndexSingletonCache";
     // FileResourcePropertyKey removed during cleanup
-    public static final FileProperty PropKey =
+    public static FileProperty PropKey =
             new FileProperty("index.dfindex", "DF index file");
 
     private static final SingletonCache<DFIndex> singleton = new SingletonCache(true, true, "dfindex", new DFIndexSingletonMapper(), null);
@@ -44,7 +44,7 @@ public class DFIndexSingletonMapper extends BaseMapper<Object, DFIndex> {
         // BaseFileResourceCache removed during cleanup
     }
 
-    public static final SingletonCache<DFIndex> getSingleton() {
+    public static SingletonCache<DFIndex> getSingleton() {
         return singleton;
     }
 

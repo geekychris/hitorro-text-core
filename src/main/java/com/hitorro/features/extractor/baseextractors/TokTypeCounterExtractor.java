@@ -36,7 +36,7 @@ import java.util.HashMap;
 
 
 public class TokTypeCounterExtractor extends FeatureExtractor<ValueSourceForClass> {
-    public static final StringProperty SectionKey = new StringProperty("compute", "", null);
+    public static StringProperty SectionKey = new StringProperty("compute", "", null);
     public static TokenTypeCounterContext key = new TokenTypeCounterContext(new String[]{"body"}, "body");
     private Type type;
 

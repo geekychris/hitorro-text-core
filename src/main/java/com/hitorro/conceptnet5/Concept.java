@@ -164,7 +164,7 @@ public class Concept implements CompressedStreamIO {
         return StringUtil.size(term, lang, pos);
     }
 
-    public static final class ConceptComparator implements Comparator<Concept> {
+    public static class ConceptComparator implements Comparator<Concept> {
         static ConceptComparator c = new ConceptComparator();
 
         @Override

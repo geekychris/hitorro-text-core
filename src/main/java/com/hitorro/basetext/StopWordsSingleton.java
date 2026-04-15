@@ -28,7 +28,7 @@ import com.hitorro.util.core.iterator.mappers.BaseMapper;
 
 
 public class StopWordsSingleton extends BaseMapper<IsoLanguage, StopWords> {
-    public static final HashCache<IsoLanguage, StopWords> singleton = new HashCache<IsoLanguage, StopWords>("stopwords", new StopWordsSingleton());
+    public static HashCache<IsoLanguage, StopWords> singleton = new HashCache<IsoLanguage, StopWords>("stopwords", new StopWordsSingleton());
 
     public StopWordsSingleton() {
     }

@@ -36,7 +36,7 @@ import java.io.IOException;
  */
 public abstract class CommandLineTextFilter
         implements TextFilter {
-    public static final StringProperty filterDir = new StringProperty("filters.directory", "", null);
+    public static StringProperty filterDir = new StringProperty("filters.directory", "", null);
     private String m_command;
 
     public CommandLineTextFilter() {

@@ -41,14 +41,14 @@ import java.io.IOException;
 
 
 public class TextToPhraseSink implements Sink<String> {
-    public static final StringProperty AnalyzersKey = new StringProperty("analyzers", "analyzers for tokenization", "NUMBER, PORTER, LOWERCASE");
+    public static StringProperty AnalyzersKey = new StringProperty("analyzers", "analyzers for tokenization", "NUMBER, PORTER, LOWERCASE");
 
-    public static final BasefileProperty DirKey = new BasefileProperty("dir", "output directory using basefile syntax");
-    public static final IntegerProperty MinDepthKey = new IntegerProperty("phrasemindepth", "phrase minimum depth (how many terms to a phrase max", 1);
-    public static final IntegerProperty PhraseDepthKey = new IntegerProperty("phrasedepth", "phrase depth (how many terms to a phrase max", 4);
+    public static BasefileProperty DirKey = new BasefileProperty("dir", "output directory using basefile syntax");
+    public static IntegerProperty MinDepthKey = new IntegerProperty("phrasemindepth", "phrase minimum depth (how many terms to a phrase max", 1);
+    public static IntegerProperty PhraseDepthKey = new IntegerProperty("phrasedepth", "phrase depth (how many terms to a phrase max", 4);
 
-    public static final IntegerProperty PhrasePerBucketKey = new IntegerProperty("phraseperbucket", "how many phrases per initial bucket file", 10000000);
-    public static final StringProperty FileExtensionKey = new StringProperty("extension", "file extension", "phrase");
+    public static IntegerProperty PhrasePerBucketKey = new IntegerProperty("phraseperbucket", "how many phrases per initial bucket file", 10000000);
+    public static StringProperty FileExtensionKey = new StringProperty("extension", "file extension", "phrase");
     private BaseFileBucketWriter<PhraseElement> m_writer;
     private PhraseElementPhraseEmitter m_emitter = null;
     private GenericAnalyzer analyzer;

@@ -31,8 +31,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ConceptName extends BaseMapper<ResultSet, String> {
-    public static String relationSql = "select text from conceptnet_concept where num_assertions > 0";
-    public static String relationWithIdSql = "select text,id from conceptnet_concept where num_assertions > 0";
+    public static final String relationSql = "select text from conceptnet_concept where num_assertions > 0";
+    public static final String relationWithIdSql = "select text,id from conceptnet_concept where num_assertions > 0";
     public static ConceptName me = new ConceptName();
 
     public static AbstractIterator<String> getIterator(Connection c, String language) {

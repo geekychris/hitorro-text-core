@@ -29,18 +29,18 @@ import java.io.File;
 /**
  */
 public class Hash {
-    public static int HASHBASE = 2;
-    public static int SUBSTRINGLENGTH = 17;
-    public static int MINDIGITLENGTH = 6;
+    public static final int HASHBASE = 2;
+    public static final int SUBSTRINGLENGTH = 17;
+    public static final int MINDIGITLENGTH = 6;
 
-    public static long hashToFile(String inFile, String outFile, int subStringLength, int windowSize) {
+    public static final long hashToFile(String inFile, String outFile, int subStringLength, int windowSize) {
         CharArrayWrapper wrapper = FileUtil.getCharArrayFromASCIIFile(new File(inFile));
         HashWriterImpl writer = new HashWriterImpl();
         writer.open(new File(outFile));
         return hashToWriter(wrapper, writer, subStringLength, windowSize);
     }
 
-    public static long hashAndWinnowToFile(String inFile, String outFile, int subStringLength, int windowSize) {
+    public static final long hashAndWinnowToFile(String inFile, String outFile, int subStringLength, int windowSize) {
         CharArrayWrapper wrapper = FileUtil.getCharArrayFromASCIIFile(new File(inFile));
         HashWriterImpl realWriter = new HashWriterImpl();
         realWriter.open(new File(outFile));
@@ -49,7 +49,7 @@ public class Hash {
         return hashToWriter(wrapper, hashWriter, subStringLength, windowSize);
     }
 
-    public static long hashToWriter(CharArrayWrapper wrapper, HashWriter writer, int subStringLength, int windowSize) {
+    public static final long hashToWriter(CharArrayWrapper wrapper, HashWriter writer, int subStringLength, int windowSize) {
         int nFileSize = wrapper.getSize();
         if (nFileSize < subStringLength) {
             subStringLength = nFileSize / 3;
@@ -58,7 +58,7 @@ public class Hash {
         return hash(wrapper, writer, subStringLength);
     }
 
-    public static long hash(CharArrayWrapper wrapper, HashWriter writer, int sl) {
+    public static final long hash(CharArrayWrapper wrapper, HashWriter writer, int sl) {
         int i, counter, stoppingPoint;
         int key, keysWritten = 0;
         int substringLength = sl;
@@ -96,7 +96,7 @@ public class Hash {
         return keysWritten;
     }
 
-    public static int hashSubstring(char[] inString, int startIndex, int inStringLength) {
+    public static final int hashSubstring(char[] inString, int startIndex, int inStringLength) {
         int i, j;
         int hashkey = 0;
 

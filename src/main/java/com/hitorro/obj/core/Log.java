@@ -25,13 +25,13 @@ import com.hitorro.util.log.Logger;
 
 
 public class Log extends com.hitorro.util.core.Log {
-    public static final Logger phraseextractor = Logger.getLogger("ht.phraseextractor");
-    public static final Logger phraseindexer = Logger.getLogger("ht.phraseextractor");
-    public static final Logger dfindexer = Logger.getLogger("ht.dfindexer");
-    public static final Logger search = Logger.getLogger("ht.search");
-    public static final Logger stop = Logger.getLogger("ht.stop");
+    public static Logger phraseextractor = Logger.getLogger("ht.phraseextractor");
+    public static Logger phraseindexer = Logger.getLogger("ht.phraseextractor");
+    public static Logger dfindexer = Logger.getLogger("ht.dfindexer");
+    public static Logger search = Logger.getLogger("ht.search");
+    public static Logger stop = Logger.getLogger("ht.stop");
 
-    public static final Logger cky = Logger.getLogger("ht.cky");
+    public static Logger cky = Logger.getLogger("ht.cky");
 
 
 }

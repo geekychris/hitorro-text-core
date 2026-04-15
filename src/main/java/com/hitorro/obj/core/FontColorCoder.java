@@ -97,7 +97,7 @@ public class FontColorCoder {
         return words;
     }
 
-    public static String getColorCodedText(String text) throws IOException {
+    public static final String getColorCodedText(String text) throws IOException {
 
         TSInterceptorContext context = new TSInterceptorContext();
         GenericAnalyzer analyzer = new GenericAnalyzer(GenericAnalyzer.Standard.apply(), Iso639Table.english, GenericAnalyzer.Mode.Index);
@@ -117,7 +117,7 @@ public class FontColorCoder {
         return sb.toString();
     }
 
-    public static String getKey() {
+    public static final String getKey() {
         StringBuilder sb = new StringBuilder();
         formatFont(sb, 0, TooFrequenctColor, "Stop Word");
         for (int i = 0; i < percent.length; i++) {

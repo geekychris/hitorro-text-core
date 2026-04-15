@@ -32,8 +32,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ConceptMapper extends BaseMapper<ResultSet, Concept> {
-    public static String conceptById = "select id, language_id, text from conceptnet_concept where id=%s";
-    public static String conceptByTerm = "select id, language_id, text from conceptnet_concept where text='%s' and language_id='%s'";
+    public static final String conceptById = "select id, language_id, text from conceptnet_concept where id=%s";
+    public static final String conceptByTerm = "select id, language_id, text from conceptnet_concept where text='%s' and language_id='%s'";
 
     public static ConceptMapper me = new ConceptMapper();
 

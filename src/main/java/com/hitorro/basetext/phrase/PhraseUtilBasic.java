@@ -40,8 +40,8 @@ import java.io.IOException;
 
 public class PhraseUtilBasic {
 
-	public static final BaseMapper<BaseFile, AbstractIterator<PhraseElement>> bf2phraseelementiter = BaseBaseFileUtil.bf2htser.combine(new DummyBaseMapper<AbstractIterator<? extends HTSerializable>, AbstractIterator<PhraseElement>>());
-	public static final BaseMapper<BaseFile, Sink<PhraseElement>> bf2phraselementsink = HTSerializableUtil.bf2htser.combine(new DummyBaseMapper<Sink<? extends HTSerializable>, Sink<PhraseElement>>());
+	public static BaseMapper<BaseFile, AbstractIterator<PhraseElement>> bf2phraseelementiter = BaseBaseFileUtil.bf2htser.combine(new DummyBaseMapper<AbstractIterator<? extends HTSerializable>, AbstractIterator<PhraseElement>>());
+	public static BaseMapper<BaseFile, Sink<PhraseElement>> bf2phraselementsink = HTSerializableUtil.bf2htser.combine(new DummyBaseMapper<Sink<? extends HTSerializable>, Sink<PhraseElement>>());
 	public static final String ResourceName = "phraselist";
 	public static final long MajorVersion = 1;
 	public static final long MinorVersion = 0;
@@ -54,7 +54,7 @@ public class PhraseUtilBasic {
 
 	// AlphaSortedPhraseListKey removed during resource cache cleanup
 
-	public static final boolean generatePhraseIndexFromPhrasesInResourceCache(int min, int max, String desc, String query, boolean writeDumpText) throws IOException {
+	public static boolean generatePhraseIndexFromPhrasesInResourceCache(int min, int max, String desc, String query, boolean writeDumpText) throws IOException {
 		// BaseFileResourcePropertyKey removed during cleanup - resource cache no longer available
 		return false;
 	}
@@ -122,7 +122,7 @@ public class PhraseUtilBasic {
 	 * @return
 	 * @throws IOException
 	 */
-	public static final BaseFile writePhrases(AbstractIterator<String> textIter,
+	public static BaseFile writePhrases(AbstractIterator<String> textIter,
 											  BaseFile dir,
 											  String fileExtension,
 											  int phraseDepth,

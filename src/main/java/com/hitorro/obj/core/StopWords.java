@@ -34,7 +34,7 @@ import java.util.Map;
 
 
 public class StopWords {
-    public static final BasefileProperty root = new BasefileProperty("analysis.stopwords.rootdir", "", "file://${ht_data}/stopwords/");
+    public static BasefileProperty root = new BasefileProperty("analysis.stopwords.rootdir", "", "file://${ht_data}/stopwords/");
     private BaseFile langDir;
     private Map<String, CharArraySet> casMap = new HashMap();
 

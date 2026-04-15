@@ -37,8 +37,8 @@ import java.io.IOException;
         isPersisted = false,
         schemaVersion = TermTuple.SerializableVersion)
 public class TermTuple implements HTSerializable {
-    public static final double TFMultFactor = 1000.0;
-    public static final double DFMultiFactor = 1000.0;
+    public static double TFMultFactor = 1000.0;
+    public static double DFMultiFactor = 1000.0;
     public static final int SerializableVersion = 1;
     public long m_hash;
     public int tf;

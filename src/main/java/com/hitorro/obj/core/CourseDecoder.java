@@ -139,7 +139,7 @@ public class CourseDecoder {
         return res;
     }
 
-    public static int scanWhileLikeChar(String text,
+    public static final int scanWhileLikeChar(String text,
                                         int s,
                                         int e) {
         if (s > e) {

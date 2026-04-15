@@ -37,7 +37,7 @@ public class NumberFilter extends TokenFilter {
         termAtt = addAttribute(CharTermAttribute.class);
     }
 
-    public static final boolean isNumber(char buff[], int length) {
+    public static boolean isNumber(char buff[], int length) {
         boolean haveDigit = false;
         char c;
         for (int i = 0; i < length; i++) {

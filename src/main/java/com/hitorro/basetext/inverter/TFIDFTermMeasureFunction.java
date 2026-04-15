@@ -42,7 +42,7 @@ public class TFIDFTermMeasureFunction extends TermMeasureFunction {
      * @param normalizedDF Fraction of document the term occurs in TP DF corpus
      * @return TFIDF: The importance of this term in the document
      */
-    public static final double computeClassicTFIDF(double normalizedTF, double normalizedDF) {
+    public static double computeClassicTFIDF(double normalizedTF, double normalizedDF) {
         return normalizedTF / normalizedDF * TermTuple.DFMultiFactor;
     }
 

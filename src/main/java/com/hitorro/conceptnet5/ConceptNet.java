@@ -37,7 +37,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class ConceptNet {
-    public static final StringProperty urlKey = new StringProperty("", "conceptnet.jdbcuri", "jdbc:sqlite:/Users/chris/staged_dir/ConceptNet.db");
+    public static StringProperty urlKey = new StringProperty("", "conceptnet.jdbcuri", "jdbc:sqlite:/Users/chris/staged_dir/ConceptNet.db");
     private TLongObjectHashMap<RelationType> relationType = new TLongObjectHashMap<>();
     private TLongObjectHashMap<Concept> concepts = new TLongObjectHashMap();
     private TLongObjectHashMap<Concept> conceptsByTerm = new TLongObjectHashMap();

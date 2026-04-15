@@ -32,7 +32,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ConceptNameWithId extends BaseMapper<ResultSet, GenericKeyValue<String, Integer>> {
-    public static String relationWithIdSql = "select text,id from conceptnet_concept where num_assertions > 0";
+    public static final String relationWithIdSql = "select text,id from conceptnet_concept where num_assertions > 0";
     public static ConceptNameWithId me = new ConceptNameWithId();
 
     public static AbstractIterator<GenericKeyValue<String, Integer>> getIterator(Connection c, String language) {

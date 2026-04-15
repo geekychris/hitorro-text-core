@@ -25,7 +25,7 @@ import java.util.Comparator;
 
 
 public class PhraseComparator implements Comparator<PhraseElement> {
-    public static final PhraseComparator pc = new PhraseComparator();
+    public static PhraseComparator pc = new PhraseComparator();
 
     public int compare(PhraseElement phraseElement, PhraseElement phraseElement1) {
         return phraseElement.compareTo(phraseElement1);

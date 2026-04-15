@@ -52,7 +52,7 @@ public class AllTypesAnalyzerCache extends BaseMapper<IsoLanguage, Analyzer> {
         this.search = search;
     }
 
-    public static final HashCache<IsoLanguage, Analyzer> getCache(boolean search) {
+    public static HashCache<IsoLanguage, Analyzer> getCache(boolean search) {
         if (search) {
             return s_cache;
         } else {
@@ -60,7 +60,7 @@ public class AllTypesAnalyzerCache extends BaseMapper<IsoLanguage, Analyzer> {
         }
     }
 
-    public static final HashCache<IsoLanguage, Analyzer> getCache() {
+    public static HashCache<IsoLanguage, Analyzer> getCache() {
         return s_cache;
     }
 

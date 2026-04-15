@@ -99,7 +99,7 @@ public class InverterUtils {
         return parser.getDocument();
     }
 
-    public static final TermTupleSetGroup getTupleSetGroupFromUrl(String query, long time) {
+    public static TermTupleSetGroup getTupleSetGroupFromUrl(String query, long time) {
         return getTupleSetGroupFromUrl(query, time, "body", Iso639Table.english);
     }
 
@@ -110,7 +110,7 @@ public class InverterUtils {
      * @param time
      * @return
      */
-    public static final TermTupleSetGroup getTupleSetGroupFromUrl(String query, long time, String indexField, IsoLanguage language) {
+    public static TermTupleSetGroup getTupleSetGroupFromUrl(String query, long time, String indexField, IsoLanguage language) {
         HTMLPage page = InverterUtils.fetchHTMLPage(query, time);
         if (page == null) {
             return null;
