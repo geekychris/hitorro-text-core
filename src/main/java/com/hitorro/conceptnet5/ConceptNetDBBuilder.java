@@ -21,12 +21,12 @@
  */
 package com.hitorro.conceptnet5;
 
+import com.hitorro.util.basefile.tools.EnvBaseFiles;
 
 import gnu.trove.set.hash.TLongHashSet;
 import com.hitorro.util.basefile.filters.FileExtension;
 import com.hitorro.util.basefile.fs.BaseFile;
 import com.hitorro.util.core.Console;
-import com.hitorro.util.core.Env;
 import com.hitorro.util.core.iterator.AbstractIterator;
 import com.hitorro.util.core.iterator.Mapper;
 import com.hitorro.util.core.iterator.sinks.Sink;
@@ -85,12 +85,12 @@ public class ConceptNetDBBuilder {
         //int maxLength, LikeRowMerger<T> merger, Comparator<T> comp, File directory, String extension
         int maxLength = 100000;
 
-        BaseFile dir = Env.getHomeBaseFile().getChild("concept");
+        BaseFile dir = EnvBaseFiles.getHomeBaseFile().getChild("concept");
         dir.mkdir();
 
         CompressedStreamFileBucketWriter<Concept> writer =
                 new CompressedStreamFileBucketWriter(maxLength, dir, "bin", factory);
-        BaseFile csvFile = Env.getBaseFile(file);
+        BaseFile csvFile = EnvBaseFiles.getBaseFile(file);
         generate(writer, csvFile);
 
         BaseFile res = merge(dir, factory);
@@ -99,7 +99,7 @@ public class ConceptNetDBBuilder {
     }
 
     private void dumpFinal() {
-        BaseFile f = Env.getHomeBaseFile().getChild("concept/final.bin");
+        BaseFile f = EnvBaseFiles.getHomeBaseFile().getChild("concept/final.bin");
         AbstractIterator<Concept> it = factory.getBaseFileToChainingMapper().apply(f);
         while (it.hasNext()) {
             Concept c = it.next();

@@ -130,7 +130,7 @@ public class BratContext {
     }
 
     public AnnotationLog getAnnotations(BaseFile file) throws IOException {
-        return (AnnotationLog) file.getLineReaderIteratorFromFile().map(new Line2BaseAnnotation()).reduce(new AnnotationLog());
+        return (AnnotationLog) com.hitorro.util.core.iterator.helpers.BaseFileIterators.getLineReaderIteratorFromFile(file).map(new Line2BaseAnnotation()).reduce(new AnnotationLog());
     }
 }
 
