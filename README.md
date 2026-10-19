@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.png" alt="Hitorro Text Core logo" width="180">
+</p>
+
 # Hitorro Text Core
 
 Standalone text processing library extracted from the Hitorro platform.
