@@ -1,0 +1,13 @@
+tf.0={} {} true
+tf.1={"3":1} {"3":1} true
+tf.2={"3":1,"7":42,"1":2} {"3":1,"7":42,"1":2} true
+tf.3={"-1":0,"2147483647":5,"3":10} {"-1":0,"2147483647":5,"3":10} true
+tf.clear={}
+nulllv.0={"docid":"1"} {"docid":"1"}
+nulllv.1={"docid":"1","question":"my question"} {"docid":"1","question":"my question"}
+nulllv.2={"docid":"1","question":"my question"} {"docid":"1","question":"my question"}
+nulllv.3={"docid":"1"} {"docid":"1"}
+nulllv.4={"docid":"1","question":"my question"} {"docid":"1","question":"my question"}
+nulllv.5={"docid":"1"} {"docid":"1"}
+nulllv.6={"docid":"1"} {"docid":"1"}
+nulllv.7={"docid":"1","question":"my question"} {"docid":"1","question":"my question"}

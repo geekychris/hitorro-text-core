@@ -21,9 +21,9 @@
  */
 package com.hitorro.jsontypesystem.dynamic;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.JsonNodeFactory;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.node.ArrayNode;
+import tools.jackson.databind.node.JsonNodeFactory;
 import com.hitorro.basetext.mappers.NERMarkup;
 import com.hitorro.jsontypesystem.JVS;
 import com.hitorro.language.Iso639Table;
@@ -31,13 +31,14 @@ import com.hitorro.language.IsoLanguage;
 import com.hitorro.util.json.keys.propaccess.Propaccess;
 
 import java.io.IOException;
+import com.hitorro.util.json.JsonValues;
 
 public class NERMarkupMapper extends com.hitorro.jsontypesystem.dynamic.DynamicFieldMapper {
     @Override
     public JsonNode map(final JVS jvs, final Propaccess pa, final int depth) {
         JsonNode arr[] = getValues(jvs, pa, depth);
         if (arr.length > 1) {
-            String langText = arr[0].textValue();
+            String langText = JsonValues.textValue(arr[0]);
             IsoLanguage lang = Iso639Table.getInstance().getRow(langText);
             JsonNode valIn = arr[1];
             return apply(valIn, lang);
@@ -53,8 +54,8 @@ public class NERMarkupMapper extends com.hitorro.jsontypesystem.dynamic.DynamicF
         ArrayNode ret = JsonNodeFactory.instance.arrayNode();
         for (JsonNode elem : arrayNode) {
             try {
-                String p = markup.process(elem.textValue());
-                ret.add(JsonNodeFactory.instance.textNode(p));
+                String p = markup.process(JsonValues.textValue(elem));
+                ret.add(JsonNodeFactory.instance.stringNode(p));
             } catch (IOException e) {
                 return null;
             }

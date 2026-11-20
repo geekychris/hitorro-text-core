@@ -21,7 +21,7 @@
  */
 package com.hitorro.basetext.classifier;
 
-import com.fasterxml.jackson.databind.node.ArrayNode;
+import tools.jackson.databind.node.ArrayNode;
 import com.hitorro.basetext.maxentclassifier.AnswerTypeClassifier;
 import com.hitorro.basetext.maxentclassifier.ChunkParser;
 import com.hitorro.util.core.events.cache.PoolContainer;
@@ -33,6 +33,7 @@ import opennlp.tools.chunker.ChunkerME;
 import opennlp.tools.cmdline.parser.ParserTool;
 import opennlp.tools.doccat.DoccatModel;
 import opennlp.tools.parser.Parse;
+import com.hitorro.util.json.JsonValues;
 
 
 public class AnswerClassifierMapper extends BaseMapper<JsonValueSource, String> {
@@ -113,11 +114,11 @@ public class AnswerClassifierMapper extends BaseMapper<JsonValueSource, String> 
             return null;
         }
         for (int i = 0; i < an.size(); i++) {
-            String f = an.get(i).textValue();
+            String f = JsonValues.textValue(an.get(i));
             if (matchMe.equalsIgnoreCase(f)) {
                 ArrayNode sent = (ArrayNode) vs.getValue(vs, sentField);
                 if (sent != null) {
-                    return sent.get(i).textValue();
+                    return JsonValues.textValue(sent.get(i));
                 }
             }
         }

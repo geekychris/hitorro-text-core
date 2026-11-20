@@ -22,7 +22,7 @@
 package com.hitorro.basetext.phrase;
 
 
-import com.fasterxml.jackson.databind.JsonNode;
+import tools.jackson.databind.JsonNode;
 import com.hitorro.basetext.indexer.Log;
 import com.hitorro.language.Iso639Table;
 import com.hitorro.obj.core.GenericAnalyzer;

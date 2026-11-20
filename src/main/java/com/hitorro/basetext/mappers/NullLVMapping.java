@@ -21,13 +21,14 @@
  */
 package com.hitorro.basetext.mappers;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.JsonNodeFactory;
-import com.fasterxml.jackson.databind.node.ObjectNode;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.node.ArrayNode;
+import tools.jackson.databind.node.JsonNodeFactory;
+import tools.jackson.databind.node.ObjectNode;
 import com.hitorro.util.core.iterator.JsonValueSource;
 import com.hitorro.util.core.iterator.mappers.BaseMapper;
 import com.hitorro.util.core.string.StringUtil;
+import com.hitorro.util.json.JsonValues;
 
 /**
  * Created with IntelliJ IDEA. User: chris Date: 8/8/12 Time: 6:21 PM To change this template use File | Settings | File
@@ -94,11 +95,11 @@ public class NullLVMapping extends BaseMapper<JsonValueSource, JsonValueSource> 
             return null;
         }
         for (int i = 0; i < an.size(); i++) {
-            String f = an.get(i).textValue();
+            String f = JsonValues.textValue(an.get(i));
             if (matchMe.equalsIgnoreCase(f)) {
                 ArrayNode sent = (ArrayNode) vs.getValue(vs, sentField);
                 if (sent != null) {
-                    return sent.get(i).textValue();
+                    return JsonValues.textValue(sent.get(i));
                 }
             }
         }
