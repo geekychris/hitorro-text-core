@@ -21,7 +21,7 @@
  */
 package com.hitorro.basetext.inverter;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import tools.jackson.databind.JsonNode;
 import gnu.trove.map.hash.TIntIntHashMap;
 import com.hitorro.language.IsoLanguage;
 import com.hitorro.util.core.IDObjectMap;

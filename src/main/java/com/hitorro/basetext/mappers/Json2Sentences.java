@@ -21,9 +21,9 @@
  */
 package com.hitorro.basetext.mappers;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.JsonNodeFactory;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.node.ArrayNode;
+import tools.jackson.databind.node.JsonNodeFactory;
 import com.hitorro.language.IsoLanguage;
 import com.hitorro.language.SentenceDetectorSingleton;
 import com.hitorro.language.SentenceSegmenter;
@@ -31,6 +31,7 @@ import com.hitorro.language.Sentences;
 import com.hitorro.util.core.events.cache.PoolContainer;
 import com.hitorro.util.core.iterator.mappers.BaseMapper;
 import com.hitorro.util.core.string.StringUtil;
+import com.hitorro.util.json.JsonValues;
 
 /**
  * Assumes working with the JSON node to pull directly value out of (whoever called this already got to the fielded
@@ -67,7 +68,7 @@ public class Json2Sentences extends BaseMapper<JsonNode, ArrayNode> {
             return null;
         }
         ArrayNode ret = JsonNodeFactory.instance.arrayNode();
-        String txt = js.textValue();
+        String txt = JsonValues.textValue(js);
 
         if (intermediateMapper != null) {
             txt = intermediateMapper.apply(txt);

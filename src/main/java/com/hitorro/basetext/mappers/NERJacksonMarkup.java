@@ -21,8 +21,8 @@
  */
 package com.hitorro.basetext.mappers;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ArrayNode;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.node.ArrayNode;
 import com.hitorro.language.IsoLanguage;
 import com.hitorro.obj.core.Log;
 import com.hitorro.util.core.Console;
@@ -31,6 +31,7 @@ import com.hitorro.util.core.iterator.mappers.BaseMapper;
 import com.hitorro.util.core.string.Fmt;
 
 import java.io.IOException;
+import com.hitorro.util.json.JsonValues;
 
 /**
  * Created with IntelliJ IDEA. User: chris Date: 8/6/12 Time: 9:24 PM To change this template use File | Settings | File
@@ -85,7 +86,7 @@ public class NERJacksonMarkup extends BaseMapper<JsonValueSource, JsonValueSourc
                 ArrayNode an = (ArrayNode) o;
                 for (int i = 0; i < an.size(); i++) {
                     JsonNode n = an.get(i);
-                    String txt = n.textValue();
+                    String txt = JsonValues.textValue(n);
                     if (txt == null) {
                         Console.println();
                     }
@@ -94,7 +95,7 @@ public class NERJacksonMarkup extends BaseMapper<JsonValueSource, JsonValueSourc
                     e.setValue(e, tf, s);
                 }
             } else {
-                String s = nerMarkup.process(o.textValue());
+                String s = nerMarkup.process(JsonValues.textValue(o));
                 if (s == null) {
                     Console.println();
                 }

@@ -21,16 +21,17 @@
  */
 package com.hitorro.basetext.mappers;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.JsonNodeFactory;
-import com.fasterxml.jackson.databind.node.ObjectNode;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.node.ArrayNode;
+import tools.jackson.databind.node.JsonNodeFactory;
+import tools.jackson.databind.node.ObjectNode;
 import com.hitorro.util.core.Console;
 import com.hitorro.util.core.events.cache.PoolContainer;
 import com.hitorro.util.core.iterator.mappers.BaseMapper;
 import com.hitorro.util.core.string.StringUtil;
 
 import java.util.List;
+import com.hitorro.util.json.JsonValues;
 
 /**
  * Works in the world of Json objects
@@ -78,7 +79,7 @@ public class ExtractPOS extends BaseMapper<JsonNode, ObjectNode> {
     }
 
     private void getAux(final JsonNode e, ObjectNode retM) {
-        String txt = e.textValue();
+        String txt = JsonValues.textValue(e);
 
         if (intermediateMapper != null) {
             txt = intermediateMapper.apply(txt);
@@ -138,7 +139,7 @@ public class ExtractPOS extends BaseMapper<JsonNode, ObjectNode> {
         ArrayNode tokArr = (ArrayNode) retM.get(tag);
         if (tokArr == null) {
             tokArr = JsonNodeFactory.instance.arrayNode();
-            retM.put(tag, tokArr);
+            retM.set(tag, tokArr);
         }
         tokArr.add(tok);
     }

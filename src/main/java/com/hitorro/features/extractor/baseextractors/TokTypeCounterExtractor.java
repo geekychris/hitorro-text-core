@@ -21,7 +21,7 @@
  */
 package com.hitorro.features.extractor.baseextractors;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import tools.jackson.databind.JsonNode;
 import com.hitorro.features.Feature;
 import com.hitorro.features.FeatureValue;
 import com.hitorro.features.extractor.ExtractionContext;

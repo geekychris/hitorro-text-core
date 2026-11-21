@@ -21,7 +21,7 @@
  */
 package com.hitorro.analysis.externalnlp.neurocoref;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import tools.jackson.databind.JsonNode;
 import com.hitorro.jsontypesystem.JVS;
 import com.hitorro.jsontypesystem.Json2JVSMapper;
 import com.hitorro.jsontypesystem.predicates.ForEach;

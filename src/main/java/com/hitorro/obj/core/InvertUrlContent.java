@@ -27,7 +27,7 @@ import com.hitorro.basetext.inverter.DocumentInverter;
 import com.hitorro.basetext.inverter.TFIDFTermMeasureFunction;
 import com.hitorro.basetext.inverter.TermTuple;
 import com.hitorro.basetext.inverter.TermTupleSet;
-import com.fasterxml.jackson.databind.JsonNode;
+import tools.jackson.databind.JsonNode;
 import com.hitorro.language.Iso639Table;
 import com.hitorro.language.IsoLanguage;
 import com.hitorro.util.commandandcontrol.ano.CommandArgument;
